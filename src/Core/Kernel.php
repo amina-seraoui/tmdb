@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Core\Router\Route;
+use App\Core\Router\Router;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -11,7 +13,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class Kernel implements RequestHandlerInterface
 {
-    private array $controllers = [];
     private array $middlewares = [];
     private ?ContainerInterface $container = null;
     private int $index = 0;
@@ -19,9 +20,37 @@ class Kernel implements RequestHandlerInterface
     public function __construct(private string $config)
     {}
 
+    /**
+     * Enregistre les routes de chaque controlleur
+     * @param string $controller
+     * @return $this
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     * @throws \ReflectionException
+     * @throws \Exception
+     */
     public function addController(string $controller): self
     {
-        $this->controllers[] = $controller;
+        $controller = new \ReflectionClass($controller);
+        $container = $this->getContainer();
+
+        /** @var Router $router */
+        $router = $container->get(Router::class);
+
+        foreach ($controller->getMethods() as $method) {
+            // Récupérer tous les attributs Route
+            $attributes = $method->getAttributes(Route::class, \ReflectionAttribute::IS_INSTANCEOF);
+
+            if (empty($attributes)) continue;
+
+            // Ajouter le chemin et le callable au routeur
+            foreach ($attributes as $attr) {
+                /** @var Route $route */
+                $route = $attr->newInstance();
+                $router->map($route, $method->getClosure($controller->newInstance($container)));
+            }
+        }
+
         return $this;
     }
 
