@@ -1,2 +1,5 @@
 .idea/
 vendor/
+front/node_modules/
+front/css/index.*
+public/assets/css/
