@@ -5,11 +5,10 @@ define('ROOT', dirname(__DIR__));
 require_once ROOT . '/vendor/autoload.php';
 
 $app = (new \App\Core\Kernel(ROOT . '/config.php'))
+    // Controlleurs
     ->addController(\App\Controllers\Home::class)
-;
-
-$res = $app
-    ->pipe(\App\Core\Middlewares\FindRouteMiddleware::class)
+    // Middlewares
+    ->pipe(\App\Core\Middlewares\Render::class)
 ;
 
 if (php_sapi_name() !== 'cli') {
