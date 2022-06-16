@@ -11,12 +11,6 @@ class Home extends Controller
     #[Route('/')]
     public function index (ServerRequestInterface $req)
     {
-        return 'hello';
-    }
-
-    #[Route('/test')]
-    public function test (ServerRequestInterface $req)
-    {
-        return 'test';
+        return $this->render('home');
     }
 }

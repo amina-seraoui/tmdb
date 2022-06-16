@@ -23,10 +23,9 @@ class Router
         return $this;
     }
 
-    public function match(ServerRequestInterface $req): ?string
+    public function match(ServerRequestInterface $req): ?ResponseInterface
     {
         if ($route = $this->router->match($req->getUri()->getPath(), $req->getMethod())) {
-//            return $route['target'];
             return call_user_func_array($route['target'], [$req]);
         }
 

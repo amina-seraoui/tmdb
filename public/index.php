@@ -6,7 +6,6 @@ require_once ROOT . '/vendor/autoload.php';
 
 $app = (new \App\Core\Kernel(ROOT . '/config.php'))
     ->addController(\App\Controllers\Home::class)
-    ->addController(\App\Controllers\Category::class)
 ;
 
 $res = $app

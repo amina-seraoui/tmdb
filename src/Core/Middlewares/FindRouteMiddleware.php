@@ -15,10 +15,6 @@ class FindRouteMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        /** @var \ReflectionMethod $route */
-        if ($response = $this->router->match($request)) {
-            return new Response(200, [], $response);
-        }
-        return $handler->handle($request);
+        return $this->router->match($request) ?? $handler->handle($request);
     }
 }
