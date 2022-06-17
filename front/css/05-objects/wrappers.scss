@@ -4,6 +4,10 @@
     flex-wrap: wrap;
 }
 
+%grid {
+    display: flex;
+}
+
 %container {
     padding: 0 ratio-space(2px);
 }

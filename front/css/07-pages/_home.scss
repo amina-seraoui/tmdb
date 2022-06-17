@@ -1,10 +1,9 @@
 main#home {
     section:first-child {
+        @extend %flex;
         background: top / cover url('https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg');
         height: 50vh;
         position: relative;
-
-        @extend %flex;
         align-items: flex-end;
 
         .container {
@@ -31,8 +30,54 @@ main#home {
     }
 
     section:nth-child(2) {
-        @extend %flex, %container;
+        @extend %grid;
         justify-content: space-between;
-        height: calc(50vh - 64px);
+        padding-left: ratio-space(2px);
+        position: relative;
+
+        .trends {
+            width: 100%;
+            padding-top: ratio-space(4px);
+            padding-bottom: ratio-space(4px);
+            overflow: auto hidden;
+            position: relative;
+            margin-left: ratio-space(2px);
+
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+        
+            &::-webkit-scrollbar-track-piece {
+                background: $light-pink;
+                border-radius: 5px;
+                margin: col(3);
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                transition: .5s;
+                background: $primary-color;
+                border-radius: 15px;
+                box-sizing: content-box;
+            }
+        
+            &::-webkit-scrollbar-thumb:hover {
+                background: lighten($primary-color, 15);
+            }
+
+            h3 {
+                position: fixed;
+            }
+
+            .slider {
+                margin-top: calc(16px + ratio-space(4px));
+            }
+        }
+
+        > a {
+            @extend %flex;
+            position: absolute;
+            bottom: 0;
+            right: ratio-space(2px);
+        }
     }
 }
