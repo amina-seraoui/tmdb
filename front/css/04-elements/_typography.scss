@@ -1,0 +1,18 @@
+h1 {
+    font-size: rem(125px);
+    font-weight: 600;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: rem(24px);
+    font-weight: 600;
+    font-family: $font-secondary;
+    text-transform: capitalize;
+}
+
+h3 {
+    @extend h2;
+    font-size: rem(16px);
+}
