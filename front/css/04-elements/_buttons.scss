@@ -1,0 +1,29 @@
+.btn, button {
+    background-color: $primary-color;
+    padding: ratio-space(2px) ratio-space(3px);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.search-btn {
+    background: none;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+}
+
+.play-btn {
+    @extend %flex;
+    
+    &::before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: url('../img/play.svg');
+        top: 0;
+        left: 0;
+        position: relative;
+        display: inline-block;
+    }
+}
