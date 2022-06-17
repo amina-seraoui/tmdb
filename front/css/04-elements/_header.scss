@@ -1,0 +1,16 @@
+header {
+    @extend %flex-center, %container;
+
+    nav {
+        @extend %flex;
+        justify-content: space-between;
+        width: 100%;
+
+        ul {
+            @extend %flex;
+        }
+    }
+
+    background: $linear;
+    height: 90px;
+}

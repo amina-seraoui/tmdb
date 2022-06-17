@@ -1,0 +1,14 @@
+%flex {
+    display: flex;
+    gap: ratio-space(2px);
+}
+
+%container {
+    padding: 0 ratio-space(2px);
+}
+
+%flex-center {
+    @extend %flex;
+    align-items: center;
+    justify-content: center;
+}
