@@ -1,5 +1,5 @@
 header {
-    @extend %flex-center, %container;
+    @extend %flex-center;
     position: absolute;
     top: 0;
     z-index: 90;
@@ -9,7 +9,7 @@ header {
         @extend %flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: calc(col(11) - ratio-space(2px));
 
         ul, form {
             @extend %flex;

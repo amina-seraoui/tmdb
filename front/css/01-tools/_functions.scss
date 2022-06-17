@@ -28,3 +28,7 @@
 @function ratio-space ($size) {
     @return $size * 8;
 }
+
+@function col ($number) {
+    @return unquote(calc($number * quotient(100, 12)) + 'vw');
+}

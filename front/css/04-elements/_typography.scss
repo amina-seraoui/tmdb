@@ -15,4 +15,5 @@ h2 {
 h3 {
     @extend h2;
     font-size: rem(16px);
+    margin-bottom: ratio-space(4px);
 }

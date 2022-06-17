@@ -1,0 +1,26 @@
+aside {
+    width: col(3);
+    padding: ratio-space(4px) 0;
+
+    ul {
+        @extend %flex;
+        
+        li {
+            padding: ratio-space(1px) ratio-space(2px);
+            border-radius: 25px;
+            font-weight: 400;
+            background-color: $dark-pink;
+            
+            &:nth-child(4n-1) {
+                background-color: $light-blue;
+                color: $dark;
+            }
+            &:nth-child(2n + 4), &:nth-child(2n) {
+                background-color: $blue;
+            }
+            &:nth-child(4n) {
+                background-color: $pink;
+            }
+        }
+    }
+}
