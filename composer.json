@@ -1,5 +1,8 @@
 {
     "name": "amina/tmdb",
+    "scripts": {
+        "start": "php -S localhost:9000 -t public"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "src/"
