@@ -4,8 +4,8 @@
   "description": "Projet Allocine",
   "main": "index.js",
   "scripts": {
-    "sass": "sass css/style.scss css/index.css --watch",
-    "build": "sass css/style.scss ../public/assets/css/index.css",
+    "sass": "sass assets/css/style.scss assets/css/index.css --watch",
+    "build": "sass assets/css/style.scss ../public/assets/css/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amina Seraoui",
