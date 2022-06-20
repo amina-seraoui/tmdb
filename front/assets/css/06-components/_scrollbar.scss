@@ -1,0 +1,21 @@
+%scrollbar {
+    &::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        background: $light-pink;
+        border-radius: 5px;
+        margin: col(3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        transition: .5s;
+        background: $primary-color;
+        border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: lighten($primary-color, 15);
+    }
+}

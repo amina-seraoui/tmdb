@@ -4,6 +4,8 @@ header {
     top: 0;
     z-index: 90;
     width: 100%;
+    background: $reverse-linear;
+    height: 90px;
 
     nav {
         @extend %flex;
@@ -21,6 +23,7 @@ header {
         }
     }
 
-    background: $reverse-linear;
-    height: 90px;
+    @media #{$media-down-md} {
+        display: none!important;
+    }
 }

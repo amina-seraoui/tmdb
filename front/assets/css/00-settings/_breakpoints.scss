@@ -12,4 +12,4 @@ $media-down-sm: "only screen and (max-width: #{$bp-sm})";
 $media-down-md: "only screen and (max-width: #{$bp-md})";
 $media-down-lg: "only screen and (max-width: #{$bp-lg})";
 $media-down-xl: "only screen and (max-width: #{$bp-xl})";
-//Utilisation: @media #{$media-up-sm} {}
+//Utilisation: @media #{$media-down-md} {}

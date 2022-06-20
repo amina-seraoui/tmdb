@@ -43,26 +43,7 @@ main#home {
             position: relative;
             margin-left: ratio-space(2px);
 
-            &::-webkit-scrollbar {
-                height: 5px;
-            }
-        
-            &::-webkit-scrollbar-track-piece {
-                background: $light-pink;
-                border-radius: 5px;
-                margin: col(3);
-            }
-        
-            &::-webkit-scrollbar-thumb {
-                transition: .5s;
-                background: $primary-color;
-                border-radius: 15px;
-                box-sizing: content-box;
-            }
-        
-            &::-webkit-scrollbar-thumb:hover {
-                background: lighten($primary-color, 15);
-            }
+            @extend %scrollbar;
 
             h3 {
                 position: fixed;

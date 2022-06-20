@@ -141,6 +141,11 @@ header nav ul input, header nav form input {
   background: none;
   border-bottom: solid 1px #FFF;
 }
+@media only screen and (max-width: 768px) {
+  header {
+    display: none !important;
+  }
+}
 
 .btn, button {
   background-color: #D51F4B;
@@ -194,7 +199,7 @@ footer {
   text-align: center;
 }
 
-main#home section:nth-child(2) > a, main#home section:first-child .container, main#home section:first-child, header, header nav, header nav ul, header nav form, .play-btn, aside ul {
+main#movie .container .details p, main#movie .container, main#home section:nth-child(2) > a, main#home section:first-child .container, main#home section:first-child, header, header nav, header nav ul, header nav form, .play-btn, aside ul {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -229,6 +234,23 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+main#movie .container .images::-webkit-scrollbar, main#home section:nth-child(2) .trends::-webkit-scrollbar {
+  height: 5px;
+}
+main#movie .container .images::-webkit-scrollbar-track-piece, main#home section:nth-child(2) .trends::-webkit-scrollbar-track-piece {
+  background: #D3C0CC;
+  border-radius: 5px;
+  margin: 25vw;
+}
+main#movie .container .images::-webkit-scrollbar-thumb, main#home section:nth-child(2) .trends::-webkit-scrollbar-thumb {
+  transition: 0.5s;
+  background: #D51F4B;
+  border-radius: 15px;
+}
+main#movie .container .images::-webkit-scrollbar-thumb:hover, main#home section:nth-child(2) .trends::-webkit-scrollbar-thumb:hover {
+  background: #e75a7c;
 }
 
 main#home section:first-child {
@@ -268,23 +290,6 @@ main#home section:nth-child(2) .trends {
   position: relative;
   margin-left: 16px;
 }
-main#home section:nth-child(2) .trends::-webkit-scrollbar {
-  height: 5px;
-}
-main#home section:nth-child(2) .trends::-webkit-scrollbar-track-piece {
-  background: #D3C0CC;
-  border-radius: 5px;
-  margin: 25vw;
-}
-main#home section:nth-child(2) .trends::-webkit-scrollbar-thumb {
-  transition: 0.5s;
-  background: #D51F4B;
-  border-radius: 15px;
-  box-sizing: content-box;
-}
-main#home section:nth-child(2) .trends::-webkit-scrollbar-thumb:hover {
-  background: #e75a7c;
-}
 main#home section:nth-child(2) .trends h3 {
   position: fixed;
 }
@@ -308,6 +313,74 @@ main#home section:nth-child(2) > a {
   main#home section:first-child .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+main#movie {
+  background: top/cover url("https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg");
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+main#movie::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(180deg, rgba(42, 44, 44, 0) 0%, #2A2C2C 100%);
+  z-index: -1;
+}
+main#movie .container {
+  height: 100%;
+  align-items: center;
+}
+main#movie .container .left, main#movie .container .right {
+  width: calc(50% - 8px);
+}
+main#movie .container .details h1 {
+  margin-bottom: 16px;
+}
+main#movie .container .details p {
+  gap: 32px;
+  margin-bottom: 16px;
+}
+main#movie .container .details button {
+  margin-top: 48px;
+}
+main#movie .container .images {
+  width: 50vw;
+  position: relative;
+  overflow: auto hidden;
+  padding-bottom: 16px;
+}
+main#movie .container .images img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+main#movie .container .actors {
+  margin-top: 16px;
+}
+main#movie .container .actors .slider {
+  flex-wrap: wrap;
+}
+main#movie .container .actors .slider .actor {
+  width: 125px;
+  text-align: center;
+}
+main#movie .container .actors .slider .actor img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 8px;
+}
+@media only screen and (max-width: 768px) {
+  main#movie .container .left, main#movie .container .right {
+    width: 100%;
+  }
+  main#movie .container .images {
+    width: 100vw;
   }
 }
 
