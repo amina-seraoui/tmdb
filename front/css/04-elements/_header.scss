@@ -13,6 +13,11 @@ header {
 
         ul, form {
             @extend %flex;
+
+            input {
+                background: none;
+                border-bottom: solid 1px $white;
+            }
         }
     }
 
