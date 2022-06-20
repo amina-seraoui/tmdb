@@ -8,7 +8,7 @@ main#home {
 
         .container {
             @extend %flex;
-            align-items: center;
+            align-items: flex-end;
             flex-direction: row-reverse;
             justify-content: space-between;
             padding: ratio-space(8px) col(1);
@@ -78,6 +78,24 @@ main#home {
             position: absolute;
             bottom: 0;
             right: ratio-space(2px);
+        }
+    }
+
+    @media #{$media-down-xl} {
+        section:first-child {
+            .container {
+                padding: ratio-space(8px) 0;
+            }
+        }
+    }
+    @media #{$media-down-lg} {
+        section:first-child {
+            height: 45vh;
+
+            .container {
+               flex-direction: column;
+               align-items: flex-start;
+            }
         }
     }
 }

@@ -17,3 +17,16 @@ h3 {
     font-size: rem(16px);
     margin-bottom: ratio-space(4px);
 }
+
+
+@media #{$media-down-lg} {
+    h1 {
+        font-size: rem(100px);
+    }
+}
+
+@media #{$media-down-sm} {
+    h1 {
+        font-size: rem(75px);
+    }
+}
