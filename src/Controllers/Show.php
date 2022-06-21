@@ -17,16 +17,17 @@ class Show extends Controller
         $this->api = new ShowAPI();
     }
 
-    #[Route('/show/[i:id]')]
+    #[Route('/tv/[i:id]')]
     public function index (ServerRequestInterface $req)
     {
         $id = $req->getAttribute('id');
         $show = $this->api->byID($id);
         $actors = $this->api->getActors($id);
 
+        //
         // Tableau de lien pour chaque catégorie
         $show->genres = array_map(function ($genre) {
-            return "<a href='/show/$genre->id'>$genre->name</a>";
+            return "<a href='/tv/$genre->id'>$genre->name</a>";
         }, $show->genres);
 
         // Date de sortie au format DateTime

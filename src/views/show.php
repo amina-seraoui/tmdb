@@ -14,14 +14,24 @@
         </div>
         <div class="right">
 
-            <div class="images">
-                <h3>Images</h3>
-                <div class="slider">
-                    <?php foreach ($show->images->backdrops as $img): ?>
-                        <img src="https://image.tmdb.org/t/p/w500<?= $img->file_path ?>" alt="<?= $show->name ?>" width="200" height="125">
-                    <?php endforeach; ?>
+            <?php if (empty($show->images->backdrops) && empty($show->images->posters)): ?>
+                <p style="font-style: italic">Aucune image disponible</p>
+            <?php else: ?>
+                <div class="images">
+                    <h3>Images</h3>
+                    <div class="slider">
+                        <?php if (empty($show->images->backdrops)):
+                            foreach ($show->images->posters as $img): ?>
+                                <img src="https://image.tmdb.org/t/p/w500<?= $img->file_path ?>" alt="<?= $show->name ?>" width="125" height="175">
+                            <?php endforeach;
+                        else:
+                            foreach ($show->images->backdrops as $img): ?>
+                                <img src="https://image.tmdb.org/t/p/w500<?= $img->file_path ?>" alt="<?= $show->name ?>" width="200" height="125">
+                            <?php endforeach;
+                        endif; ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
             <div class="actors">
                 <h3>Acteurs</h3>
                 <div class="slider">

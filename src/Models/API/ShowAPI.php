@@ -21,5 +21,4 @@ class ShowAPI extends TMDB
     {
         return $this->callAPI('/tv/' . $id . '/credits')->cast;
     }
-
 }
