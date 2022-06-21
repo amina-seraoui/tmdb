@@ -7,6 +7,8 @@ require_once ROOT . '/vendor/autoload.php';
 $app = (new \App\Core\Kernel(ROOT . '/config.php'))
     // Controlleurs
     ->addController(\App\Controllers\Home::class)
+    ->addController(\App\Controllers\Movie::class)
+
     // Middlewares
     ->pipe(\App\Core\Middlewares\Render::class)
 ;

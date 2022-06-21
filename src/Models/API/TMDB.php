@@ -10,9 +10,10 @@ abstract class TMDB
         'language' => 'fr-FR'
     ];
 
-    protected function callAPI (string $endpoint): object
+    protected function callAPI (string $endpoint, array $options = []): object
     {
-        $curl = curl_init(self::URI . $endpoint . '?' . http_build_query(self::OPTIONS));
+        $options = array_merge(self::OPTIONS, $options);
+        $curl = curl_init(self::URI . $endpoint . '?' . http_build_query($options));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $content = curl_exec($curl);

@@ -21,7 +21,7 @@ class Renderer
 
         // L'afficher dans le layout
         ob_start();
-        require $this->dir_path . 'layout.php';
+        require $this->dir_path . '_layout.php';
         return ob_get_clean();
     }
 }
