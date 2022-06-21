@@ -1,0 +1,69 @@
+main#actor {
+    margin-top: calc(90px + ratio-space(5px));
+    overflow: hidden;
+
+    .container {
+        @extend %grid;
+        .left {
+            width: col(5);
+            text-align: center;
+
+            img {
+                width: col(3);
+                margin: auto;
+                height: 500px;
+                object-fit: cover;
+            }
+
+            .details {
+                margin-top: ratio-space(4px);
+                text-align: left;
+            }
+        }
+
+        .right {
+            width: col(7);
+            padding-left: ratio-space(2px);
+
+            .general {
+                @extend %flex;
+
+                li {
+                    width: col(3);
+                    h3 {
+                        margin-bottom: ratio-space(1px);
+                    }
+                }
+
+            }
+
+            .movies {
+                margin-top: ratio-space(4px);
+                max-height: 400px;
+                overflow-y: scroll;
+                padding-bottom: ratio-space(2px);
+                // @extend %scrollbar;
+
+                .populars {
+                    padding-bottom: ratio-space(2px);
+                    margin-bottom: ratio-space(2px);
+                }
+
+                .chronos {
+                    width: col(6);
+                    ul {
+                        @extend %flex;
+
+                        li {
+                            width: calc(50% - ratio-space(1px));
+                        }
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    margin-left: -20px;
+                }
+            }
+        }
+    }
+}
