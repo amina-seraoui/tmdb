@@ -1,5 +1,5 @@
 h1 {
-    font-size: rem(125px);
+    font-size: rem(80px);
     font-weight: 600;
     font-family: $font-secondary;
     text-transform: uppercase;
@@ -22,12 +22,12 @@ h3 {
 
 @media #{$media-down-lg} {
     h1 {
-        font-size: rem(100px);
+        font-size: rem(60px);
     }
 }
 
 @media #{$media-down-sm} {
     h1 {
-        font-size: rem(75px);
+        font-size: rem(45px);
     }
 }

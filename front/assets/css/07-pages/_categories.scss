@@ -1,0 +1,41 @@
+main#categories {
+    @extend %flex, %container;
+    margin-top: calc(90px + ratio-space(2px));
+
+    aside {
+        width: calc(col(3) - ratio-space(1px));
+
+        ul li {
+            @extend %flex;
+            cursor: pointer;
+            i {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: url('../img/plus.svg');
+
+               
+            }
+
+            &.active i {
+                background: url('../img/check.svg');
+            }
+        }
+    }
+
+    section {
+        width: calc(col(9) - ratio-space(1px));
+
+        .category {
+            margin-top: ratio-space(3px);
+
+            .row {
+                @extend %flex;
+
+                img {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

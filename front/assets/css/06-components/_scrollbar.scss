@@ -1,12 +1,12 @@
 %scrollbar {
     &::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
+        width: 10px;
+        height: 10px;
     }
 
     &::-webkit-scrollbar-track-piece {
         background: $light-pink;
-        border-radius: 5px;
+        border-radius: 10px;
         margin: col(3);
     }
 

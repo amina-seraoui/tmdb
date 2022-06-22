@@ -1,7 +1,7 @@
 main#home {
     section:first-child {
         @extend %flex;
-        background: top / cover url('https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg');
+        background: 50% 15% / cover url('https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg');
         height: 45vh;
         position: relative;
         align-items: flex-end;
