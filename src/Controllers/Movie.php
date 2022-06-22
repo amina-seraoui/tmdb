@@ -11,7 +11,7 @@ class Movie extends Controller
 {
     private MovieAPI $api;
 
-    public function __construct(ContainerInterface $c)
+    public function __construct (ContainerInterface $c)
     {
         parent::__construct($c);
         $this->api = new MovieAPI();

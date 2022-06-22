@@ -36,7 +36,7 @@
                 <h3>Acteurs</h3>
                 <div class="slider">
                     <?php for ($i = 0; $i < 5; $i++): ?>
-                        <a class="actor" href="<?= $actors[$i]->id; ?>">
+                        <a class="actor" href="/actor/<?= $actors[$i]->id; ?>">
                             <img src="https://image.tmdb.org/t/p/original<?= $actors[$i]->profile_path; ?>" alt="<?= $actors[$i]->name; ?>" width="64" height="64">
                             <p><?= $actors[$i]->name; ?></p>
                         </a>

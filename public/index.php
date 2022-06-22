@@ -9,6 +9,7 @@ $app = (new \App\Core\Kernel(ROOT . '/config.php'))
     ->addController(\App\Controllers\Home::class)
     ->addController(\App\Controllers\Movie::class)
     ->addController(\App\Controllers\Show::class)
+    ->addController(\App\Controllers\Actor::class)
 
     // Middlewares
     ->pipe(\App\Core\Middlewares\Render::class)
