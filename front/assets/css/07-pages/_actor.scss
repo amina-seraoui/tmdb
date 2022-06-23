@@ -7,12 +7,16 @@ main#actor {
         .left {
             width: col(5);
             text-align: center;
+            max-height: calc(100vh - 90px - ratio-space(5px));
+            overflow: auto;
+            @extend %scrollbar;
 
             img {
-                width: col(3);
+                width: 350px;
                 margin: auto;
-                height: 500px;
+                height: 400px;
                 object-fit: cover;
+                border-radius: 5px;
             }
 
             .details {
@@ -24,9 +28,12 @@ main#actor {
         .right {
             width: col(7);
             padding-left: ratio-space(2px);
+            max-height: calc(100vh - 90px - ratio-space(5px));
+            overflow: auto;
 
             .general {
                 @extend %flex;
+                margin-top: ratio-space(1px);
 
                 li {
                     width: col(3);
@@ -34,15 +41,12 @@ main#actor {
                         margin-bottom: ratio-space(1px);
                     }
                 }
-
             }
 
             .movies {
                 margin-top: ratio-space(4px);
-                max-height: 400px;
                 overflow-y: scroll;
                 padding-bottom: ratio-space(2px);
-                // @extend %scrollbar;
 
                 .populars {
                     padding-bottom: ratio-space(2px);
@@ -50,7 +54,7 @@ main#actor {
                 }
 
                 .chronos {
-                    width: col(6);
+                    width: 100%;
                     ul {
                         @extend %flex;
 

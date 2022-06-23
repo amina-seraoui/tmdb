@@ -19,6 +19,10 @@ h3 {
     margin-bottom: ratio-space(4px);
 }
 
+p {
+    line-height: $font-size * 1.5;
+}
+
 
 @media #{$media-down-lg} {
     h1 {
