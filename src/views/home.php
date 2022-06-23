@@ -11,7 +11,7 @@
             <h3>Genres</h3>
             <ul>
                 <?php foreach ($categories as $category): ?>
-                    <li><a href="/categories/<?= $category->id ?>"><?= $category->name ?></a></li>
+                    <li><a href="/movies/<?= $category->id ?>"><?= $category->name ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </aside>

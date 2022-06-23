@@ -8,9 +8,9 @@ class MovieAPI extends TMDB
     {
         return $this->callAPI('/genre/movie/list')->genres;
     }
-    public function getTrends (): array
+    public function getTrends (int $page = 1): array
     {
-        return $this->callAPI('/trending/all/day')->results;
+        return $this->callAPI('/trending/all/day', ['page' => $page])->results;
     }
     public function byID (int $id): object
     {
@@ -24,11 +24,11 @@ class MovieAPI extends TMDB
     {
         return $this->callAPI('/movie/' . $id . '/credits')->cast;
     }
-    public function getImagesByID (int $id): object
+    public function byGenres (array $genres, int $page = 1): array
     {
-        return $this->callAPI('/movie/' . $id . '/images', [
-            'include_image_language' => 'fr',
-            'include_video_language' => 'fr'
-        ]);
+        return $this->callAPI('/discover/movie', [
+            'with_genres' => implode($genres),
+            'page' => $page
+        ])->results;
     }
 }

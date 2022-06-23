@@ -10,6 +10,12 @@ abstract class TMDB
         'language' => 'fr-FR'
     ];
 
+    /**
+     * @param string $endpoint (/!\ Ne doit pas terminer par un /)
+     * @param array $options
+     * @return object
+     * @throws \Exception
+     */
     protected function callAPI (string $endpoint, array $options = []): object
     {
         $options = array_merge(self::OPTIONS, $options);
@@ -21,6 +27,7 @@ abstract class TMDB
             throw new \Exception(curl_error($curl));
         }
         curl_close($curl);
+
         return json_decode($content);
     }
 }

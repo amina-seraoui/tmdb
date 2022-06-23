@@ -12,6 +12,7 @@ $app = (new \App\Core\Kernel(ROOT . '/config.php'))
     ->addController(\App\Controllers\Actor::class)
 
     // Middlewares
+    ->pipe(\App\Core\Middlewares\TrailingSlash::class)
     ->pipe(\App\Core\Middlewares\Render::class)
 ;
 

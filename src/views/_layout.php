@@ -15,9 +15,9 @@
             <a href="/" class="logo"><img src="/assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
             <nav>
                 <ul>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Acteurs</a></li>
+                    <li><a href="/movies">Films</a></li>
+                    <li><a href="/shows">Séries</a></li>
+                    <li><a href="/actors">Acteurs</a></li>
                 </ul>
 
                 <form action="#" method="POST">
