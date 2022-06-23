@@ -1,9 +1,10 @@
-main#categories {
-    @extend %flex, %container;
+main#genres {
+    @extend %container;
     margin-top: calc(90px + ratio-space(2px));
 
     aside {
         width: calc(col(3) - ratio-space(1px));
+        position: fixed;
 
         ul li {
             @extend %flex;
@@ -13,7 +14,7 @@ main#categories {
                 width: 16px;
                 height: 16px;
                 background: url('../img/plus.svg');
-
+                transition: .3s;
                
             }
 
@@ -25,6 +26,7 @@ main#categories {
 
     section {
         width: calc(col(9) - ratio-space(1px));
+        margin-left: calc(col(3) - ratio-space(1px));;
 
         .category {
             margin-top: ratio-space(3px);

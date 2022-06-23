@@ -126,7 +126,7 @@ h3 {
   }
 }
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 90;
   width: 100%;
@@ -200,7 +200,7 @@ footer {
   text-align: center;
 }
 
-main#categories section .category .row, main#categories aside ul li, main#categories, main#actor .container .right .movies .chronos ul, main#actor .container .right .general, main#movie .container .details p, main#movie .container, main#home section:nth-child(2) > a, main#home section:first-child .container, main#home section:first-child, header, header nav, header nav ul, header nav form, .play-btn, aside ul {
+main#genres section .category .row, main#genres aside ul li, main#actor .container .right .movies .chronos ul, main#actor .container .right .general, main#movie .container .details p, main#movie .container, main#home section:nth-child(2) > a, main#home section:first-child .container, main#home section:first-child, header, header nav, header nav ul, header nav form, .play-btn, aside ul {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
@@ -210,7 +210,7 @@ main#actor .container, main#home section:nth-child(2), .slider {
   display: flex;
 }
 
-main#categories {
+main#genres {
   padding: 0 16px;
 }
 
@@ -441,31 +441,34 @@ main#actor .container .right .movies::-webkit-scrollbar {
   margin-left: -20px;
 }
 
-main#categories {
+main#genres {
   margin-top: 106px;
 }
-main#categories aside {
+main#genres aside {
   width: calc(25% - 8px);
+  position: fixed;
 }
-main#categories aside ul li {
+main#genres aside ul li {
   cursor: pointer;
 }
-main#categories aside ul li i {
+main#genres aside ul li i {
   display: inline-block;
   width: 16px;
   height: 16px;
   background: url("../img/plus.svg");
+  transition: 0.3s;
 }
-main#categories aside ul li.active i {
+main#genres aside ul li.active i {
   background: url("../img/check.svg");
 }
-main#categories section {
+main#genres section {
   width: calc(75% - 8px);
+  margin-left: calc(25% - 8px);
 }
-main#categories section .category {
+main#genres section .category {
   margin-top: 24px;
 }
-main#categories section .category .row img {
+main#genres section .category .row img {
   border-radius: 5px;
 }
 

@@ -1,4 +1,4 @@
-<main id="genres">
+<main id="genres" data-media_type="movie">
     <aside>
         <h3>Genres</h3>
         <ul>
