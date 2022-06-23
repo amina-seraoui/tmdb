@@ -53,7 +53,7 @@ class Movie extends Controller
     }
 
     #[Route('/movies')]
-    public function trends (ServerRequestInterface $req): ResponseInterface
+    public function all (ServerRequestInterface $req): ResponseInterface
     {
         return $this->list($req);
     }

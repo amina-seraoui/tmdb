@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Router\Route;
 use App\Models\API\ShowAPI;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Show extends Controller
@@ -27,13 +28,33 @@ class Show extends Controller
         //
         // Tableau de lien pour chaque catégorie
         $show->genres = array_map(function ($genre) {
-            return "<a href='/tv/$genre->id'>$genre->name</a>";
+            return "<a href='/shows/$genre->id'>$genre->name</a>";
         }, $show->genres);
 
         // Date de sortie au format DateTime
         $show->first_air_date = new \DateTime($show->first_air_date);
 
-//        dd($movie);
         return $this->render('show', compact('show', 'actors'));
+    }
+
+    #[Route('/shows/[i:id]')]
+    public function list (ServerRequestInterface $req): ResponseInterface
+    {
+        $id = $req->getAttribute('id');
+        $genres = $this->api->getCategories();
+
+        $actual = array_values(array_filter($genres, function ($g) use ($id) {
+            return $g->id === (int)$id;
+        }))[0] ?? (object)['name' => 'Aucune catégorie séléctionnée', 'id' => null];
+
+        $shows = $this->api->byGenres([$actual->id]);
+
+        return $this->render('shows', compact('shows', 'genres', 'actual'));
+    }
+
+    #[Route('/shows')]
+    public function all (ServerRequestInterface $req): ResponseInterface
+    {
+        return $this->list($req);
     }
 }

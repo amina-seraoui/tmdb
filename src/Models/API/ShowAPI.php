@@ -8,7 +8,6 @@ class ShowAPI extends TMDB
     {
         return $this->callAPI('/genre/tv/list')->genres;
     }
-
     public function byID (int $id): object
     {
         return $this->callAPI('/tv/' . $id, [
@@ -20,5 +19,12 @@ class ShowAPI extends TMDB
     public function getActors (int $id): array
     {
         return $this->callAPI('/tv/' . $id . '/credits')->cast;
+    }
+    public function byGenres (array $genres, int $page = 1): array
+    {
+        return $this->callAPI('/discover/tv', [
+            'with_genres' => implode($genres),
+            'page' => $page
+        ])->results;
     }
 }
