@@ -47,9 +47,9 @@ class Movie extends Controller
             return $g->id === (int)$id;
         }))[0] ?? (object)['name' => 'Aucune catégorie séléctionnée', 'id' => null];
 
-        $movies = $this->api->byGenres([$actual->id]);
+        [$movies, $total_pages] = $this->api->byGenres([$actual->id]);
 
-        return $this->render('movies', compact('movies', 'genres', 'actual'));
+        return $this->render('movies', compact('movies', 'genres', 'actual', 'total_pages'));
     }
 
     #[Route('/movies')]

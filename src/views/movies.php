@@ -1,4 +1,4 @@
-<main id="genres" data-media_type="movie">
+<main id="genres" data-media_type="movie" data-total_pages="<?= $total_pages ?>">
     <aside>
         <h3>Genres</h3>
         <ul>

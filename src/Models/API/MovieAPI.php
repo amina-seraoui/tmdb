@@ -26,9 +26,11 @@ class MovieAPI extends TMDB
     }
     public function byGenres (array $genres, int $page = 1): array
     {
-        return $this->callAPI('/discover/movie', [
+        $res = $this->callAPI('/discover/movie', [
             'with_genres' => implode($genres),
             'page' => $page
-        ])->results;
+        ]);
+
+        return [$res->results, $res->total_pages];
     }
 }

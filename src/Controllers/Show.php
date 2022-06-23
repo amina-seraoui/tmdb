@@ -47,9 +47,9 @@ class Show extends Controller
             return $g->id === (int)$id;
         }))[0] ?? (object)['name' => 'Aucune catégorie séléctionnée', 'id' => null];
 
-        $shows = $this->api->byGenres([$actual->id]);
+        [$shows, $total_pages] = $this->api->byGenres([$actual->id]);
 
-        return $this->render('shows', compact('shows', 'genres', 'actual'));
+        return $this->render('shows', compact('shows', 'genres', 'actual', 'total_pages'));
     }
 
     #[Route('/shows')]

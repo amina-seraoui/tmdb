@@ -22,9 +22,10 @@ class ShowAPI extends TMDB
     }
     public function byGenres (array $genres, int $page = 1): array
     {
-        return $this->callAPI('/discover/tv', [
+        $res = $this->callAPI('/discover/tv', [
             'with_genres' => implode($genres),
             'page' => $page
-        ])->results;
+        ]);
+        return [$res->results, $res->total_pages];
     }
 }
