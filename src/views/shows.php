@@ -1,7 +1,7 @@
 <main id="genres" data-media_type="tv" data-total_pages="<?= $total_pages ?>">
     <aside>
         <h3>Genres</h3>
-        <ul>
+        <ul class="categories">
             <?php foreach ($genres as $genre): ?>
                 <li <?= $genre->id === (int)$actual->id ? 'class="active"' : null ?> data-id="<?= $genre->id ?>"><?= $genre->name ?><i></i></li>
             <?php endforeach; ?>

@@ -45,7 +45,7 @@ class Show extends Controller
 
         $actual = array_values(array_filter($genres, function ($g) use ($id) {
             return $g->id === (int)$id;
-        }))[0] ?? (object)['name' => 'Aucune catégorie séléctionnée', 'id' => null];
+        }))[0] ?? (object)['name' => 'Aucune catégorie sélectionnée', 'id' => null];
 
         [$shows, $total_pages] = $this->api->byGenres([$actual->id]);
 

@@ -25,11 +25,6 @@ class Actor extends Controller
         $actor = $this->api->byID($id);
         $movies = $this->api->getCredits($id);
 
-//        // Tableau de lien pour chaque catégorie
-//        $movie->genres = array_map(function ($genre) {
-//            return "<a href='/movies/$genre->id'>$genre->name</a>";
-//        }, $movie->genres);
-
         // Transformer les dates de sortie en DateTime
         $movies = array_map(function ($m) {
             $m->release_date = $m->media_type === 'tv' ? new \DateTime($m->first_air_date) : new \DateTime($m->release_date);
@@ -52,7 +47,6 @@ class Actor extends Controller
         $actor->birthday = new \DateTime($actor->birthday);
         $actor->age = date_diff($actor->birthday, date_create('now'))->y;
 
-//        dd($populars);
         return $this->render('actor', compact('actor', 'movies', 'populars'));
     }
 }

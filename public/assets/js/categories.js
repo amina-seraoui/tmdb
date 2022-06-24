@@ -41,7 +41,7 @@ if (main && categories && row) {
         callApi()
     }
     
-    // On appelle l'api pour récupérer les résultats selon les catégories séléctionnées
+    // On appelle l'api pour récupérer les résultats selon les catégories sélectionnées
     const callApi = () => {
         if (last_fetch !== page) {
             last_fetch = page

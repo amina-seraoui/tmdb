@@ -25,7 +25,7 @@
                 <?php endfor; ?>
             </div>
         </div>
-        <a href="/">Voir plus <img src="assets/img/arrow-right.svg" alt="Fléche droite"></a>
+        <a href="/movies">Voir plus <img src="assets/img/arrow-right.svg" alt="Fléche droite"></a>
     </section>
 
 </main>
