@@ -1,0 +1,18 @@
+ul.categories {
+    li {
+        @extend %flex;
+        cursor: pointer;
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url('../img/plus.svg');
+            transition: .3s;
+           
+        }
+
+        &.active i {
+            background: url('../img/check.svg');
+        }
+    }
+}

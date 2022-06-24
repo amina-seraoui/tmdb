@@ -13,7 +13,7 @@ header {
         justify-content: space-between;
         width: calc(col(11) - ratio-space(2px));
 
-        ul, form {
+        ul, .search-form {
             @extend %flex;
 
             input {

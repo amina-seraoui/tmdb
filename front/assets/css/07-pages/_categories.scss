@@ -5,23 +5,6 @@ main#genres {
     aside {
         width: calc(col(3) - ratio-space(1px));
         position: fixed;
-
-        ul li {
-            @extend %flex;
-            cursor: pointer;
-            i {
-                display: inline-block;
-                width: 16px;
-                height: 16px;
-                background: url('../img/plus.svg');
-                transition: .3s;
-               
-            }
-
-            &.active i {
-                background: url('../img/check.svg');
-            }
-        }
     }
 
     section {
