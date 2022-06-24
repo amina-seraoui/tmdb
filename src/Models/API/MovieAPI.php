@@ -8,10 +8,6 @@ class MovieAPI extends TMDB
     {
         return $this->callAPI('/genre/movie/list')->genres;
     }
-    public function getTrends (int $page = 1): array
-    {
-        return $this->callAPI('/trending/all/day', ['page' => $page])->results;
-    }
     public function byID (int $id): object
     {
         return $this->callAPI('/movie/' . $id, [

@@ -21,7 +21,7 @@ class Home extends Controller
     public function index (ServerRequestInterface $req)
     {
         $categories = $this->api->getCategories();
-        $trends = $this->api->getTrends();
+        $trends = $this->api->getTrends('movie');
         return $this->render('home', compact('categories', 'trends'));
     }
 }

@@ -17,13 +17,14 @@
                 <ul>
                     <li><a href="/movies">Films</a></li>
                     <li><a href="/shows">Séries</a></li>
-                    <li><a href="/actors">Acteurs</a></li>
+                    <li><a href="/search">Recherche</a></li>
                 </ul>
 
-                <form action="#" method="POST">
+<!--                ajouter un if : -->
+                <div class="search-form">
                     <input type="search" id="search" name="search"/>
                     <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
-                </form>
+                </div>
             </nav>
         </header>
 

@@ -11,6 +11,7 @@ abstract class TMDB
     ];
 
     /**
+     * Effectue un appel curl à l'API TMDB et renvoie un objet
      * @param string $endpoint (/!\ Ne doit pas terminer par un /)
      * @param array $options
      * @return object
@@ -29,5 +30,17 @@ abstract class TMDB
         curl_close($curl);
 
         return json_decode($content);
+    }
+
+    /**
+     * Renvoie les tendances selon le type de contenu voulu
+     * @param string $type 'movie' | 'tv' | 'person'
+     * @param int $page
+     * @return array
+     * @throws \Exception
+     */
+    public function getTrends (string $type, int $page = 1): array
+    {
+        return $this->callAPI('/trending/' . $type . '/day', ['page' => $page])->results;
     }
 }

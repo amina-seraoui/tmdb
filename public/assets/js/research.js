@@ -20,16 +20,16 @@ if (input && h2 && rows && movies && shows && actors && categories) {
             refresh()
         })
     })
-    
+
     // A chaque modification de la recherche : on la relance
     input.addEventListener('input', e => {
         refresh()
     })
-    
+
     const refresh = () => {
         init()
         if(medias_active.length) {
-            h2.innerText = `Résultats de votre recherche “ ${input.value} ”`
+            h2.innerText = input.value ? `Résultats de votre recherche “ ${input.value} ”` : 'Tendances'
             medias.forEach(media => {
                 medias_active.indexOf(media) !== -1 && fetchResult(input.value, media)
             })
@@ -37,68 +37,68 @@ if (input && h2 && rows && movies && shows && actors && categories) {
             h2.innerText = 'Veuillez séléctionner une catégorie'
         }
     }
-    
+
     const init = () => {
         movies.innerHTML = ''
         shows.innerHTML = ''
         actors.innerHTML = ''
-    
+
         // getmedias_active
         medias_active = []
         categories.forEach(cat => {
             if (cat.className === 'active') medias_active.push(cat.dataset.media_type)
         })
-    
+
         // Afficher les blocs selon les médias activés
         medias.forEach((media, id) => {
             rows[id].style.display = medias_active.indexOf(media) !== -1 ? 'block' : 'none'
         })
     }
-    
+
+    // si la valeur est vide, renvoie les tendances
     const fetchResult = (val, media_type) => {
         const endpoint = val !== '' ?
           'search/' + media_type :
           'trending/' + media_type + '/day'
-        console.log(endpoint)
+
         fetch(
-            'https://api.themoviedb.org/3/' + endpoint + '?' +
-            'api_key=3878fff853d2f6476b4bef55a2246bf1' +
-            '&language=fr-FR' +
-            '&query=' + val
+          'https://api.themoviedb.org/3/' + endpoint + '?' +
+          'api_key=3878fff853d2f6476b4bef55a2246bf1' +
+          '&language=fr-FR' +
+          '&query=' + val
         )
-        .then(res => res.json())
-        .then(res => {
-            // s'il y a des résultats : boucler dessus
-            if (res.total_results) {
-                res.results.forEach(r => {
-                    switch (media_type) {
-                        case 'movie':
-                            movies.appendChild(createPoster(r, media_type))
-                            break
-                        case 'tv':
-                            shows.appendChild(createPoster(r, media_type))
-                            break
-                        case 'person':
-                            actors.appendChild(createPerson(r))
-                    }
-                })
-            } else {
-                switch (media_type) {
-                    case 'movie':
-                        movies.innerText = 'Aucun résultat dans cette section'
-                        break
-                    case 'tv':
-                        shows.innerText = 'Aucun résultat pour cette section'
-                        break
-                    case 'person':
-                        actors.innerText = 'Aucun résultat pour cette section'
-                }
-            }
-        })
+          .then(res => res.json())
+          .then(res => {
+              // s'il y a des résultats : boucler dessus
+              if (res.total_results) {
+                  res.results.forEach(r => {
+                      switch (media_type) {
+                          case 'movie':
+                              movies.appendChild(createPoster(r, media_type))
+                              break
+                          case 'tv':
+                              shows.appendChild(createPoster(r, media_type))
+                              break
+                          case 'person':
+                              actors.appendChild(createPerson(r))
+                      }
+                  })
+              } else {
+                  switch (media_type) {
+                      case 'movie':
+                          movies.innerText = 'Aucun résultat dans cette section'
+                          break
+                      case 'tv':
+                          shows.innerText = 'Aucun résultat pour cette section'
+                          break
+                      case 'person':
+                          actors.innerText = 'Aucun résultat pour cette section'
+                  }
+              }
+          })
     }
-    
+
     const createPoster = (e, media_type) => {
-        console.log(e);
         const a = document.createElement('a')
         const img = document.createElement('img')
         a.className = 'poster'
@@ -110,9 +110,8 @@ if (input && h2 && rows && movies && shows && actors && categories) {
         a.appendChild(img)
         return a
     }
-    
+
     const createPerson = (e) => {
-        console.log(e);
         const div = document.createElement('div')
         const a = document.createElement('a')
         const img = document.createElement('img')
@@ -124,7 +123,7 @@ if (input && h2 && rows && movies && shows && actors && categories) {
         img.width = '125'
         img.height = '125'
         p.innerText = e.name
-    
+
         a.appendChild(img)
         div.appendChild(a)
         div.appendChild(p)

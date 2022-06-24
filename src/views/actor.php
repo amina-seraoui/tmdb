@@ -1,7 +1,7 @@
 <main id="actor">
     <div class="container">
         <div class="left">
-            <img src="https://image.tmdb.org/t/p/original/<?= $actor->profile_path ?>" alt="<?= $actor->name ?>">
+            <img src="https://image.tmdb.org/t/p/original<?= $actor->profile_path ?>" alt="<?= $actor->name ?>">
             <?php if (!empty($actor->biography)): ?>
                 <div class="details">
                     <h3>Biographie</h3>
@@ -36,7 +36,7 @@
                     <div class="slider">
                         <?php for ($i = 0; $i < min(5, count($populars)); $i++): ?>
                             <a href="/<?= $populars[$i]->media_type . '/' . $populars[$i]->id ?>">
-                                <img src="https://image.tmdb.org/t/p/w500/<?= $populars[$i]->poster_path ?>" alt="The title" width="125" height="175">
+                                <img src="https://image.tmdb.org/t/p/w500<?= $populars[$i]->poster_path ?>" alt="The title" width="125" height="175">
                             </a>
                         <?php endfor; ?>
                     </div>

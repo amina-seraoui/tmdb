@@ -10,6 +10,7 @@ $app = (new \App\Core\Kernel(ROOT . '/config.php'))
     ->addController(\App\Controllers\Movie::class)
     ->addController(\App\Controllers\Show::class)
     ->addController(\App\Controllers\Actor::class)
+    ->addController(\App\Controllers\Search::class)
 
     // Middlewares
     ->pipe(\App\Core\Middlewares\TrailingSlash::class)

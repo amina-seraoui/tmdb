@@ -1,0 +1,6 @@
+img {
+    &[src$="w500"], &[src$="original"] {
+        display: inline-block;
+        background: center / 50% url('../img/empty.svg') no-repeat, lighten($dark, 15);
+    }
+}
