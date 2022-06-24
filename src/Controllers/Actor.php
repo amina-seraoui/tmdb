@@ -10,6 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Actor extends Controller
 {
+    protected string $route_name = 'actor';
     private TMDB $api;
 
     public function __construct(ContainerInterface $c)

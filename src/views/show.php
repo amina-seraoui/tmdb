@@ -1,4 +1,8 @@
-<main id="movie" style="background-image: url('https://image.tmdb.org/t/p/original<?= $show->backdrop_path ?>')">
+<main id="movie"
+    <?php if ($show->backdrop_path): ?>
+      style="background-image: url('https://image.tmdb.org/t/p/original<?= $show->backdrop_path ?>')"
+    <?php endif; ?>
+>
     <div class="container">
         <div class="left details">
             <h1><?= $show->name ?></h1>

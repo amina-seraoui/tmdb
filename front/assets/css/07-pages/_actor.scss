@@ -1,6 +1,8 @@
 main#actor {
     margin-top: calc(90px + ratio-space(5px));
     overflow: hidden;
+    background: linear-gradient(180deg, rgba($primary-color, 0) 0%, $primary-color 100%);
+    min-height: calc(100vh - 90px - ratio-space(5px));
 
     .container {
         @extend %grid;

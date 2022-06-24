@@ -1,5 +1,5 @@
 main#movie {
-    background: top / cover url('https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg');
+    background: top / cover, linear-gradient(180deg, rgba($primary-color, 0) 0%, $primary-color 100%);
     height: 100vh;
     overflow: hidden;
     position: relative;

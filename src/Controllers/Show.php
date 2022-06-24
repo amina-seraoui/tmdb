@@ -10,6 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Show extends Controller
 {
+    protected string $route_name = 'show';
     private ShowAPI $api;
 
     public function __construct(ContainerInterface $c)

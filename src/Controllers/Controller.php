@@ -10,6 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 abstract class Controller
 {
+    protected string $route_name = '';
     private Renderer $renderer;
 
     public function __construct(protected ContainerInterface $c) {
@@ -24,7 +25,9 @@ abstract class Controller
     protected function render(string $view, array $params = []): ResponseInterface
     {
         try {
-            $body = $this->renderer->render($view, $params);
+            $body = $this->renderer->render($view, array_merge([
+                'route_name' => $this->route_name
+            ], $params));
             return new Response(200, [], $body);
         } catch (\Exception $e) {
             return new Response(500, [], 'Chemin innaccessible.');

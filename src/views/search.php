@@ -8,7 +8,7 @@
         </ul>
     </aside>
     <section>
-        <h2>Veuillez effectuer une recherche</h2>
+        <h2><label for="search">Veuillez indiquer votre recherche</label></h2>
         <div class="row">
             <h3>Films</h3>
             <div class="slide">

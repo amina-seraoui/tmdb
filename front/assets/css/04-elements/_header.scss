@@ -20,6 +20,15 @@ header {
                 background: none;
                 border-bottom: solid 1px $white;
             }
+
+            li {
+                opacity: .5;
+                transition: .2s;
+
+                &.active, &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 

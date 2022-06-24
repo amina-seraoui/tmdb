@@ -9,6 +9,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Search extends Controller
 {
+    protected string $route_name = 'search';
     private SearchAPI $api;
 
     public function __construct(ContainerInterface $c)

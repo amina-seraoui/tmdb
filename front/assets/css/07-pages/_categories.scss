@@ -8,8 +8,8 @@ main#genres {
     }
 
     section {
-        width: calc(col(9) - ratio-space(1px));
-        margin-left: calc(col(3) - ratio-space(1px));;
+        width: calc(col(9));
+        margin-left: calc(col(3) + ratio-space(2px));
 
         .category {
             margin-top: ratio-space(3px);

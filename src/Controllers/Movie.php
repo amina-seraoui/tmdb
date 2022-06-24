@@ -10,6 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Movie extends Controller
 {
+    protected string $route_name = 'movie';
     private MovieAPI $api;
 
     public function __construct (ContainerInterface $c)
@@ -33,7 +34,6 @@ class Movie extends Controller
         // Date de sortie au format DateTime
         $movie->release_date = new \DateTime($movie->release_date);
 
-//        dd($movie);
         return $this->render('movie', compact('movie', 'actors'));
     }
 

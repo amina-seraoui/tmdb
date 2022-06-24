@@ -15,16 +15,17 @@
             <a href="/" class="logo"><img src="/assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
             <nav>
                 <ul>
-                    <li><a href="/movies">Films</a></li>
-                    <li><a href="/shows">Séries</a></li>
-                    <li><a href="/search">Recherche</a></li>
+                    <li<?= $route_name === 'movie' ? ' class="active"' : '' ?>><a href="/movies">Films</a></li>
+                    <li<?= $route_name === 'show' ? ' class="active"' : '' ?>><a href="/shows">Séries</a></li>
+                    <li<?= $route_name === 'search' ? ' class="active"' : '' ?>><a href="/search">Recherche</a></li>
                 </ul>
 
-<!--                ajouter un if : -->
-                <div class="search-form">
-                    <input type="search" id="search" name="search"/>
-                    <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
-                </div>
+                <?php if ($route_name === 'search'): ?>
+                    <div class="search-form">
+                        <input type="search" id="search" name="search"/>
+                        <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
+                    </div>
+                <?php endif; ?>
             </nav>
         </header>
 
