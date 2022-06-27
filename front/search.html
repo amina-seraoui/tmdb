@@ -5,271 +5,268 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="assets/css/index.css">
-        <link rel="shortcut icon" href="assets/img/logo.svg" type="image/svg">
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="shortcut icon" href="/assets/img/logo.svg" type="image/svg">
         <title>Allociné</title>
     </head>
     <body>
+
         <header>
-            <a href="/" class="logo"><img src="assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
+            <a href="/" class="logo"><img src="/assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
             <nav>
                 <ul>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Recherche</a></li>
+                    <li><a href="/movies">Films</a></li>
+                    <li><a href="/shows">Séries</a></li>
+                    <li class="active"><a href="/search">Recherche</a></li>
                 </ul>
-
-                <div class="search-form">
-                    <input type="search">
-                    <button class="search-btn"><img src="assets/img/search.svg" alt="Loupe"></button>
-                </div>
             </nav>
         </header>
 
         <main id="research">
-            <aside>
-                <h3>Filtrer la recherche</h3>
-                <ul class="categories">
-                    <li class="active" data-media_type="movie">Films<i></i></li>
-                    <li class="active" data-media_type="tv">Séries<i></i></li>
-                    <li class="active" data-media_type="person">Acteurs<i></i></li>
-                </ul>
-            </aside>
-            <section>
-                <h2>Résultats de votre recherche “<span></span>”</h2>
-                <div class="row">
-                    <h3>Films</h3>
-                    <div class="slide">
-                        <div class="slider movies">
-                            <a href="/movie/453395" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="150" height="200">
-                            </a>
-                            <a href="/movie/338953" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/uXs7wMtsfnBFuGVogAxJXZXshFU.jpg" alt="Les Animaux fantastiques : Les Secrets de Dumbledore" width="150" height="200">
-                            </a>
-                                            <a href="/movie/675353" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/7RSCL6V8BlekgVnNPok6tLW50tP.jpg" alt="Sonic 2, le film" width="150" height="200">
-                            </a>
-                                            <a href="/movie/752623" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/rK8s7bTDZiOs41FXsOcoSv8X9Y5.jpg" alt="Le Secret de la cité perdue" width="150" height="200">
-                            </a>
-                                            <a href="/movie/818397" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/zGPLpljwrlK2y7AWXVpGx0ceIyH.jpg" alt="Memory" width="150" height="200">
-                            </a>
-                                            <a href="/movie/526896" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg" alt="Morbius" width="150" height="200">
-                            </a>
-                                            <a href="/movie/507086" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/4tRxeoxwf6X8l3yWYJr1CniKm6O.jpg" alt="Jurassic World : Le Monde d'Après" width="150" height="200">
-                            </a>
-                                            <a href="/movie/639933" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/hk0JZyTHfgN35f43pJUhDPTNjM0.jpg" alt="The Northman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/979163" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/kcp4zW9SR0Q1Y5OHfqiBPYlHZhq.jpg" alt="Au-delà de l’infini : Making-Of de Buzz l’éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/648579" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/wYChc5lbr5oAXGdajZ2D2c3nOeC.jpg" alt="Un talent en or massif" width="150" height="200">
-                            </a>
+    <aside>
+        <h3>Filtrer la recherche</h3>
+        <ul class="categories">
+            <li class="active" data-media_type="movie">Films<i></i></li>
+            <li class="active" data-media_type="tv">Séries<i></i></li>
+            <li class="active" data-media_type="person">Acteurs<i></i></li>
+        </ul>
+    </aside>
+    <section>
+        <div class="title">
+            <h2><label for="search">Veuillez indiquer votre recherche</label></h2>
+            <div class="search-form">
+                <input type="search" id="search" name="search"/>
+                <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Films</h3>
+            <div class="slide">
+                <div class="slider movies">
+                                            <a href="/movie/453395" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" alt="Doctor Strange in the Multiverse of Madness" width="150" height="200">
+                        </a>
+                                            <a href="/movie/667739" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/5TdKvZimLSJHPQW8t3ctlsusnmH.jpg" alt="The Man From Toronto" width="150" height="200">
+                        </a>
+                                            <a href="/movie/759054" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/czXyMcmiulyZjhYAnnMwVhFCvN.jpg" alt="Rise" width="150" height="200">
+                        </a>
+                                            <a href="/movie/780609" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/jo1Kv3P3UgDVk7JnUFr2Cl8WWUM.jpg" alt="Men" width="150" height="200">
+                        </a>
+                                            <a href="/movie/361743" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg" alt="Top Gun: Maverick" width="150" height="200">
+                        </a>
+                                            <a href="/movie/338953" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/jrgifaYeUtTnaH7NF5Drkgjg2MB.jpg" alt="Fantastic Beasts: The Secrets of Dumbledore" width="150" height="200">
+                        </a>
+                                            <a href="/movie/828947" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/rVKMA2j8m8hWgsDyXOllXp8DsWI.jpg" alt="Beavis and Butt-Head Do the Universe" width="150" height="200">
+                        </a>
+                                            <a href="/movie/615469" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/7COPO5B9AOKIB4sEkvNu0wfve3c.jpg" alt="Spiderhead" width="150" height="200">
+                        </a>
+                                            <a href="/movie/819876" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/iSx6t4mj1FT4ePqPYHW287SmNa1.jpg" alt="Crimes of the Future" width="150" height="200">
+                        </a>
                                             <a href="/movie/634649" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/3SyG7dq2q0ollxJ4pSsrqcfRmVj.jpg" alt="Spider-Man: No Way Home" width="150" height="200">
-                            </a>
-                                            <a href="/movie/764835" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u6Pg9eTklhg6Aa7kXaxrfdE1Chi.jpg" alt="The Desperate Hour" width="150" height="200">
-                            </a>
-                                            <a href="/movie/705861" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/77YXITmwal3dPCLNzLDIiFMaa7U.jpg" alt="Le Haut du panier" width="150" height="200">
-                            </a>
-                                            <a href="/movie/718789" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cCcNaQVS0Oc6LhDxNqGj1dJxIio.jpg" alt="Buzz l'Éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/610150" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jUiaVnAo0aRzQYMfxOfzdHcltZ2.jpg" alt="Dragon Ball Super : Super Hero" width="150" height="200">
-                            </a>
-                                            <a href="/movie/508947" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jBCUJ90BVXIDSLlXUvgQcj6LOHa.jpg" alt="Alerte rouge" width="150" height="200">
-                            </a>
-                                            <a href="/movie/689700" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u713iOJjYPECVuk8facgNxaLHds.jpg" alt="Clean" width="150" height="200">
-                            </a>
-                                            <a href="/movie/335787" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/iNV2wiYpSBXJuFeEZUHC92zgcdl.jpg" alt="Uncharted" width="150" height="200">
-                            </a>
-                                            <a href="/movie/414906" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/t9JGg10CW1DzXEdWL54ewkUko6N.jpg" alt="The Batman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/831946" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cpWUtkcgRKeauhTyVMjYHxAutp4.jpg" alt="Interceptor" width="150" height="200">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Séries</h3>
-                    <div class="slide">
-                        <div class="slider shows">
-                            <a href="/movie/453395" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="150" height="200">
-                            </a>
-                            <a href="/movie/338953" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/uXs7wMtsfnBFuGVogAxJXZXshFU.jpg" alt="Les Animaux fantastiques : Les Secrets de Dumbledore" width="150" height="200">
-                            </a>
-                                            <a href="/movie/675353" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/7RSCL6V8BlekgVnNPok6tLW50tP.jpg" alt="Sonic 2, le film" width="150" height="200">
-                            </a>
-                                            <a href="/movie/752623" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/rK8s7bTDZiOs41FXsOcoSv8X9Y5.jpg" alt="Le Secret de la cité perdue" width="150" height="200">
-                            </a>
-                                            <a href="/movie/818397" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/zGPLpljwrlK2y7AWXVpGx0ceIyH.jpg" alt="Memory" width="150" height="200">
-                            </a>
-                                            <a href="/movie/526896" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg" alt="Morbius" width="150" height="200">
-                            </a>
+                            <img src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="Spider-Man: No Way Home" width="150" height="200">
+                        </a>
+                                            <a href="/movie/616037" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/4zLfBbGnuUBLbMVtagTZvzFwS8l.jpg" alt="Thor: Love and Thunder" width="150" height="200">
+                        </a>
                                             <a href="/movie/507086" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/4tRxeoxwf6X8l3yWYJr1CniKm6O.jpg" alt="Jurassic World : Le Monde d'Après" width="150" height="200">
-                            </a>
-                                            <a href="/movie/639933" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/hk0JZyTHfgN35f43pJUhDPTNjM0.jpg" alt="The Northman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/979163" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/kcp4zW9SR0Q1Y5OHfqiBPYlHZhq.jpg" alt="Au-delà de l’infini : Making-Of de Buzz l’éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/648579" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/wYChc5lbr5oAXGdajZ2D2c3nOeC.jpg" alt="Un talent en or massif" width="150" height="200">
-                            </a>
-                                            <a href="/movie/634649" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/3SyG7dq2q0ollxJ4pSsrqcfRmVj.jpg" alt="Spider-Man: No Way Home" width="150" height="200">
-                            </a>
-                                            <a href="/movie/764835" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u6Pg9eTklhg6Aa7kXaxrfdE1Chi.jpg" alt="The Desperate Hour" width="150" height="200">
-                            </a>
-                                            <a href="/movie/705861" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/77YXITmwal3dPCLNzLDIiFMaa7U.jpg" alt="Le Haut du panier" width="150" height="200">
-                            </a>
+                            <img src="https://image.tmdb.org/t/p/w500/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg" alt="Jurassic World Dominion" width="150" height="200">
+                        </a>
+                                            <a href="/movie/526896" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg" alt="Morbius" width="150" height="200">
+                        </a>
+                                            <a href="/movie/968438" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/jlXUaOqGCSb8I7M0Yn2vKQIiDfs.jpg" alt="Love & Gelato" width="150" height="200">
+                        </a>
                                             <a href="/movie/718789" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cCcNaQVS0Oc6LhDxNqGj1dJxIio.jpg" alt="Buzz l'Éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/610150" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jUiaVnAo0aRzQYMfxOfzdHcltZ2.jpg" alt="Dragon Ball Super : Super Hero" width="150" height="200">
-                            </a>
-                                            <a href="/movie/508947" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jBCUJ90BVXIDSLlXUvgQcj6LOHa.jpg" alt="Alerte rouge" width="150" height="200">
-                            </a>
-                                            <a href="/movie/689700" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u713iOJjYPECVuk8facgNxaLHds.jpg" alt="Clean" width="150" height="200">
-                            </a>
-                                            <a href="/movie/335787" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/iNV2wiYpSBXJuFeEZUHC92zgcdl.jpg" alt="Uncharted" width="150" height="200">
-                            </a>
+                            <img src="https://image.tmdb.org/t/p/w500/vpILbP9eOQEtdQgl4vgjZUNY07r.jpg" alt="Lightyear" width="150" height="200">
+                        </a>
+                                            <a href="/movie/807356" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/t6UCz7syPrlJ2LQQBFLWiF37f19.jpg" alt="Watcher" width="150" height="200">
+                        </a>
+                                            <a href="/movie/756999" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/bxHZpV02OOu9vq3sb3MsOudEnYc.jpg" alt="The Black Phone" width="150" height="200">
+                        </a>
+                                            <a href="/movie/545611" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg" alt="Everything Everywhere All at Once" width="150" height="200">
+                        </a>
+                                            <a href="/movie/614934" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/b6UjAGzPzOnXhPIASUaSX1BUbXD.jpg" alt="Elvis" width="150" height="200">
+                        </a>
                                             <a href="/movie/414906" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/t9JGg10CW1DzXEdWL54ewkUko6N.jpg" alt="The Batman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/831946" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cpWUtkcgRKeauhTyVMjYHxAutp4.jpg" alt="Interceptor" width="150" height="200">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Personnalités</h3>
-                    <div class="slide">
-                        <div class="slider actors">
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                            <div class="actor">
-                                <a href="/movie/453395">
-                                    <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="125" height="125">
-                                </a>
-                                <p>Guy Hawkins</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <script src="assets/js/index.js" type="module"></script>
+                            <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="The Batman" width="150" height="200">
+                        </a>
+                                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Séries</h3>
+            <div class="slide">
+                <div class="slider shows">
+                                            <a href="/tv/112836" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/bnfTPTTytrZZ9Aw6hoOQdojiaKo.jpg" alt="Money Heist: Korea - Joint Economic Area" width="150" height="200">
+                        </a>
+                                            <a href="/tv/197588" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/74kkM7E5IymHl7ZS4XugP6YT3zU.jpg" alt="Man Vs Bee" width="150" height="200">
+                        </a>
+                                            <a href="/tv/92830" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/qJRB789ceLryrLvOKrZqLKr2CGf.jpg" alt="Obi-Wan Kenobi" width="150" height="200">
+                        </a>
+                                            <a href="/tv/75006" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/scZlQQYnDVlnpxFTxaIv2g0BWnL.jpg" alt="The Umbrella Academy" width="150" height="200">
+                        </a>
+                                            <a href="/tv/63247" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/y55oBgf6bVMI7sFNXwJDrSIxPQt.jpg" alt="Westworld" width="150" height="200">
+                        </a>
+                                            <a href="/tv/76479" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/stTEycfG9928HYGEISBFaG1ngjM.jpg" alt="The Boys" width="150" height="200">
+                        </a>
+                                            <a href="/tv/66732" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="Stranger Things" width="150" height="200">
+                        </a>
+                                            <a href="/tv/120089" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/3r4LYFuXrg3G8fepysr4xSLWnQL.jpg" alt="SPY x FAMILY" width="150" height="200">
+                        </a>
+                                            <a href="/tv/92782" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/cdkyMYdu8ao26XOBvilNzLneUg1.jpg" alt="Ms. Marvel" width="150" height="200">
+                        </a>
+                                            <a href="/tv/71446" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg" alt="Money Heist" width="150" height="200">
+                        </a>
+                                            <a href="/tv/37854" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/fcXdJlbSdUEeMSJFsXKsznGwwok.jpg" alt="One Piece" width="150" height="200">
+                        </a>
+                                            <a href="/tv/197449" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/jf9EyK7KgHIAzpOEVujAFScUkcW.jpg" alt="Loot" width="150" height="200">
+                        </a>
+                                            <a href="/tv/83121" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/5khbC6AuNgnvnoDbjIMKCOhEtIc.jpg" alt="Kaguya-sama: Love Is War" width="150" height="200">
+                        </a>
+                                            <a href="/tv/194766" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/a8x9tynN9kcwhSHLMbuj1nl2mM7.jpg" alt="The Summer I Turned Pretty" width="150" height="200">
+                        </a>
+                                            <a href="/tv/156507" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/3sHAsDMik5CyJCwrfb0KS6EaBdR.jpg" alt="Chloe" width="150" height="200">
+                        </a>
+                                            <a href="/tv/1399" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" alt="Game of Thrones" width="150" height="200">
+                        </a>
+                                            <a href="/tv/111800" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/euYz4adiSHH0GE3YnTeh3uLfBvL.jpg" alt="The Old Man" width="150" height="200">
+                        </a>
+                                            <a href="/tv/202876" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/liT1qsjEoVjZRZbigDH72xIhA4C.jpg" alt="A Dream of Splendor" width="150" height="200">
+                        </a>
+                                            <a href="/tv/92749" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/vKDUmKO6F9bSKKyHhg7YGbgcEeF.jpg" alt="Moon Knight" width="150" height="200">
+                        </a>
+                                            <a href="/tv/103516" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/iwIdajr5Y4zq2ibvq75VnDAJBr.jpg" alt="Star Trek: Strange New Worlds" width="150" height="200">
+                        </a>
+                                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Personnalités</h3>
+            <div class="slide">
+                <div class="slider actors">
+                                            <a href="/actor/78317" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/soDD1xiV3zVQWOJzVdJwfgIqzfe.jpg" alt="Bob Bergen" width="125" height="125">
+                            <p>Bob Bergen</p>
+                        </a>
+                                            <a href="/actor/2963" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/ar33qcWbEgREn07ZpXv5Pbj8hbM.jpg" alt="Nicolas Cage" width="125" height="125">
+                            <p>Nicolas Cage</p>
+                        </a>
+                                            <a href="/actor/3453397" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500" alt="雷火剑" width="125" height="125">
+                            <p>雷火剑</p>
+                        </a>
+                                            <a href="/actor/71580" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/fBEucxECxGLKVHBznO0qHtCGiMO.jpg" alt="Benedict Cumberbatch" width="125" height="125">
+                            <p>Benedict Cumberbatch</p>
+                        </a>
+                                            <a href="/actor/287" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/oTB9vGIBacH5aQNS0pUM74QSWuf.jpg" alt="Brad Pitt" width="125" height="125">
+                            <p>Brad Pitt</p>
+                        </a>
+                                            <a href="/actor/500" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/8qBylBsQf4llkGrWR3qAsOtOU8O.jpg" alt="Tom Cruise" width="125" height="125">
+                            <p>Tom Cruise</p>
+                        </a>
+                                            <a href="/actor/234352" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg" alt="Margot Robbie" width="125" height="125">
+                            <p>Margot Robbie</p>
+                        </a>
+                                            <a href="/actor/1972281" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500" alt="Fiorella Amico" width="125" height="125">
+                            <p>Fiorella Amico</p>
+                        </a>
+                                            <a href="/actor/3553696" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500" alt="Zain Ullah" width="125" height="125">
+                            <p>Zain Ullah</p>
+                        </a>
+                                            <a href="/actor/3487087" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500" alt="雷火剣" width="125" height="125">
+                            <p>雷火剣</p>
+                        </a>
+                                            <a href="/actor/31" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/xndWFsBlClOJFRdhSt4NBwiPq2o.jpg" alt="Tom Hanks" width="125" height="125">
+                            <p>Tom Hanks</p>
+                        </a>
+                                            <a href="/actor/1622390" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/7wMyr6F3yzvbSpu2XMxSW3vObED.jpg" alt="Lee Chae-dam" width="125" height="125">
+                            <p>Lee Chae-dam</p>
+                        </a>
+                                            <a href="/actor/8237" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/oXzKVAdHhGA7pkFtuj67rYAOq60.jpg" alt="Doris Day" width="125" height="125">
+                            <p>Doris Day</p>
+                        </a>
+                                            <a href="/actor/2072389" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/23xjaYjxyq2pcU704tJ8uvjr4FS.jpg" alt="Lana Rhodes" width="125" height="125">
+                            <p>Lana Rhodes</p>
+                        </a>
+                                            <a href="/actor/20738" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/dyWUKQlNyr7SUAjo58VZXvPODkr.jpg" alt="Song Kang-ho" width="125" height="125">
+                            <p>Song Kang-ho</p>
+                        </a>
+                                            <a href="/actor/10099" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/jsSFCVB7MhuVbSLwTgESiXEiNjt.jpg" alt="Park Chan-wook" width="125" height="125">
+                            <p>Park Chan-wook</p>
+                        </a>
+                                            <a href="/actor/2524" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/sGMA6pA2D6X0gun49igJT3piHs3.jpg" alt="Tom Hardy" width="125" height="125">
+                            <p>Tom Hardy</p>
+                        </a>
+                                            <a href="/actor/54693" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/cZ8a3QvAnj2cgcgVL6g4XaqPzpL.jpg" alt="Emma Stone" width="125" height="125">
+                            <p>Emma Stone</p>
+                        </a>
+                                            <a href="/actor/3535926" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500" alt="赤坂丽" width="125" height="125">
+                            <p>赤坂丽</p>
+                        </a>
+                                            <a href="/actor/6193" class="actor">
+                            <img src="https://image.tmdb.org/t/p/w500/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg" alt="Leonardo DiCaprio" width="125" height="125">
+                            <p>Leonardo DiCaprio</p>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+        <footer>
+            <p>Copyright © 2022 - Amina Seraoui. Tous droits réservés.</p>
+        </footer>
+
+        <script src="/assets/js/index.js" type="module"></script>
     </body>
 </html>

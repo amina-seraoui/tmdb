@@ -24,13 +24,11 @@ main#movie {
         }
 
         .details {
-            h1 {
-                margin-bottom: ratio-space(2px);
-            }
+            @extend %flex;
+            gap: ratio-space(4px);
+            margin-bottom: ratio-space(2px);
 
-            p {
-                @extend %flex;
-                gap: ratio-space(4px);
+            h1 {
                 margin-bottom: ratio-space(2px);
             }
 

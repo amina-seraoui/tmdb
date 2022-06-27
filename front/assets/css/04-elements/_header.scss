@@ -13,13 +13,8 @@ header {
         justify-content: space-between;
         width: calc(col(11) - ratio-space(2px));
 
-        ul, .search-form {
+        ul {
             @extend %flex;
-
-            input {
-                background: none;
-                border-bottom: solid 1px $white;
-            }
 
             li {
                 opacity: .5;

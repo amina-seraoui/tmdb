@@ -11,8 +11,23 @@ main#research {
         width: calc(col(9) - ratio-space(1px));
         margin-left: calc(col(3) - ratio-space(1px));
 
+        .title {
+            @extend %flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            
+            input {
+                background: none;
+                border-bottom: solid 1px $white;
+            }
+        }
+
         .row {
             margin-bottom: ratio-space(3px);
+            h2 {
+                margin-bottom: ratio-space(2px);
+            }
 
             .slide {
                 overflow-x: auto;
@@ -25,6 +40,11 @@ main#research {
                         width: 125px;
                         height: 125px; 
                     }
+                }
+
+                .poster {
+                    width: 150px;
+                    height: 200px;
                 }
             }
         }
