@@ -19,21 +19,10 @@
                     <li<?= $route_name === 'show' ? ' class="active"' : '' ?>><a href="/shows">Séries</a></li>
                     <li<?= $route_name === 'search' ? ' class="active"' : '' ?>><a href="/search">Recherche</a></li>
                 </ul>
-
-                <?php if ($route_name === 'search'): ?>
-                    <div class="search-form">
-                        <input type="search" id="search" name="search"/>
-                        <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
-                    </div>
-                <?php endif; ?>
             </nav>
         </header>
 
         <?= $content ?>
-
-        <footer>
-            <p>Copyright © 2022 - Amina Seraoui. Tous droits réservés.</p>
-        </footer>
 
         <script src="/assets/js/index.js" type="module"></script>
     </body>

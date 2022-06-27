@@ -8,6 +8,10 @@ class MovieAPI extends TMDB
     {
         return $this->callAPI('/genre/movie/list')->genres;
     }
+    public function getTrends (string $type = 'movie', int $page = 1): array
+    {
+        return parent::getTrends($type, $page);
+    }
     public function byID (int $id): object
     {
         return $this->callAPI('/movie/' . $id, [
@@ -15,6 +19,12 @@ class MovieAPI extends TMDB
             'include_image_language' => 'fr',
             'include_video_language' => 'fr'
         ]);
+    }
+    public function getProducers (int $id): array
+    {
+        return [...array_filter($this->callAPI('/movie/' . $id . '/credits')->crew, function ($crew) {
+            return $crew->department === 'Production' || $crew->department === 'Directing';
+        })];
     }
     public function getActors (int $id): array
     {

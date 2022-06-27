@@ -26,16 +26,26 @@ class Show extends Controller
         $show = $this->api->byID($id);
         $actors = $this->api->getActors($id);
 
-        //
         // Tableau de lien pour chaque catégorie
         $show->genres = array_map(function ($genre) {
             return "<a href='/shows/$genre->id'>$genre->name</a>";
         }, $show->genres);
 
+        // Récupérer les producteurs
+        $show->producers = array_map(function ($prod) {
+            return "<a href='/actor/$prod->id'>$prod->name</a>";
+        }, $this->api->getProducers($id));
+
         // Date de sortie au format DateTime
         $show->first_air_date = new \DateTime($show->first_air_date);
 
-        return $this->render('show', compact('show', 'actors'));
+        // Récupérer les teasers ou à défaut les extraits vidéo
+        $show->teasers = [...array_filter($show->videos->results, function ($m) {
+            return $m->type === 'Teaser';
+        })];
+        empty($show->teasers) ? $show->teasers = $show->videos->results : null;
+
+        return $this->render('show', compact('show', 'actors', 'producers'));
     }
 
     #[Route('/shows/[i:id]')]
@@ -44,9 +54,9 @@ class Show extends Controller
         $id = $req->getAttribute('id');
         $genres = $this->api->getCategories();
 
-        $actual = array_values(array_filter($genres, function ($g) use ($id) {
+        $actual = [...array_filter($genres, function ($g) use ($id) {
             return $g->id === (int)$id;
-        }))[0] ?? (object)['name' => 'Aucune catégorie sélectionnée', 'id' => null];
+        })][0] ?? (object)['name' => 'Aucune catégorie sélectionnée', 'id' => null];
 
         [$shows, $total_pages] = $this->api->byGenres([$actual->id]);
 

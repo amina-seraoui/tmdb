@@ -8,7 +8,13 @@
         </ul>
     </aside>
     <section>
-        <h2><label for="search">Veuillez indiquer votre recherche</label></h2>
+        <div class="title">
+            <h2><label for="search">Veuillez indiquer votre recherche</label></h2>
+            <div class="search-form">
+                <input type="search" id="search" name="search"/>
+                <label for="search" class="search-btn"><img src="/assets/img/search.svg" alt="Loupe"></label>
+            </div>
+        </div>
         <div class="row">
             <h3>Films</h3>
             <div class="slide">

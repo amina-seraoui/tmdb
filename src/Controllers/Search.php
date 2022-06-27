@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Core\Router\Route;
-use App\Models\API\SearchAPI;
+use App\Models\API\MovieAPI;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Search extends Controller
 {
     protected string $route_name = 'search';
-    private SearchAPI $api;
+    private MovieAPI $api;
 
     public function __construct(ContainerInterface $c)
     {
         parent::__construct($c);
-        $this->api = new SearchAPI();
+        $this->api = new MovieAPI();
     }
 
     #[Route('/search')]

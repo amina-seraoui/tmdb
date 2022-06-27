@@ -31,8 +31,19 @@ class Movie extends Controller
             return "<a href='/movies/$genre->id'>$genre->name</a>";
         }, $movie->genres);
 
+        // Récupérer les producteurs
+        $movie->producers = array_map(function ($prod) {
+            return "<a href='/actor/$prod->id'>$prod->name</a>";
+        }, $this->api->getProducers($id));
+
         // Date de sortie au format DateTime
         $movie->release_date = new \DateTime($movie->release_date);
+
+        // Récupérer les teasers ou à défaut les extraits vidéo
+        $movie->teasers = [...array_filter($movie->videos->results, function ($m) {
+                return $m->type === 'Teaser';
+        })];
+        empty($movie->teasers) ? $movie->teasers = $movie->videos->results : null;
 
         return $this->render('movie', compact('movie', 'actors'));
     }
@@ -43,9 +54,9 @@ class Movie extends Controller
         $id = $req->getAttribute('id');
         $genres = $this->api->getCategories();
 
-        $actual = array_values(array_filter($genres, function ($g) use ($id) {
+        $actual = [...array_filter($genres, function ($g) use ($id) {
             return $g->id === (int)$id;
-        }))[0] ?? (object)['name' => 'Aucune catégorie sélectionnée', 'id' => null];
+        })][0] ?? (object)['name' => 'Aucune catégorie sélectionnée', 'id' => null];
 
         [$movies, $total_pages] = $this->api->byGenres([$actual->id]);
 

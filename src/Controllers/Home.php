@@ -22,6 +22,14 @@ class Home extends Controller
     {
         $categories = $this->api->getCategories();
         $trends = $this->api->getTrends('movie');
-        return $this->render('home', compact('categories', 'trends'));
+        $movie = $this->api->byID($trends[0]->id);
+
+        // Récupérer les teasers ou à défaut les extraits vidéo
+        $movie->teasers = [...array_filter($movie->videos->results, function ($m) {
+            return $m->type === 'Teaser';
+        })];
+        empty($movie->teasers) ? $movie->teasers = $movie->videos->results : null;
+
+        return $this->render('home', compact('categories', 'trends', 'movie'));
     }
 }

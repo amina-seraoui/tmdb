@@ -11,10 +11,12 @@
                 <span>2.35 • <?= implode(', ', $movie->genres) ?> • <?= $movie->release_date->format('Y') ?></span>
             </p>
             <p><?= $movie->overview ?></p>
-            <p>
-                Réalisateur : Guy Hawkins
-            </p>
-            <button class="play-btn">Bande-annonce</button>
+            <?php if (!empty($movie->producers)): ?>
+                <p>Producteurs : <?= implode(', ', $movie->producers) ?></p>
+            <?php endif;
+            if (!empty($movie->teasers)): ?>
+                <button class="play-btn">Bande-annonce</button>
+            <?php endif; ?>
         </div>
         <div class="right">
 
@@ -55,3 +57,9 @@
         </div>
     </div>
 </main>
+
+<?php if (!empty($movie->teasers)): ?>
+    <div id="teaser" data-src="<?= $movie->teasers[0]->key ?>">
+        <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+<?php endif; ?>

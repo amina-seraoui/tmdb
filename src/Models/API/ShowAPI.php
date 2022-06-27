@@ -20,6 +20,12 @@ class ShowAPI extends TMDB
     {
         return $this->callAPI('/tv/' . $id . '/credits')->cast;
     }
+    public function getProducers (int $id): array
+    {
+        return [...array_filter($this->callAPI('/tv/' . $id . '/credits')->crew, function ($crew) {
+            return $crew->department === 'Production';
+        })];
+    }
     public function byGenres (array $genres, int $page = 1): array
     {
         $res = $this->callAPI('/discover/tv', [

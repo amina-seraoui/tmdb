@@ -11,10 +11,12 @@
                 <span><?= $show->number_of_seasons ?> saisons • <?= implode(', ', $show->genres) ?> • <?= $show->first_air_date->format('Y') ?></span>
             </p>
             <p><?= $show->overview ?></p>
-            <p>
-                Réalisateur : Guy Hawkins
-            </p>
-            <button class="play-btn">Bande-annonce</button>
+            <?php if (!empty($show->producers)): ?>
+                <p>Producteurs : <?= implode(', ', $show->producers) ?></p>
+            <?php endif;
+            if (!empty($show->teasers)): ?>
+                <button class="play-btn">Bande-annonce</button>
+            <?php endif; ?>
         </div>
         <div class="right">
 
@@ -54,3 +56,9 @@
         </div>
     </div>
 </main>
+
+<?php if (!empty($show->teasers)): ?>
+    <div id="teaser" data-src="<?= $show->teasers[0]->key ?>">
+        <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+<?php endif;
