@@ -17,7 +17,7 @@
                 <ul>
                     <li<?= $route_name === 'movie' ? ' class="active"' : '' ?>><a href="/movies">Films</a></li>
                     <li<?= $route_name === 'show' ? ' class="active"' : '' ?>><a href="/shows">Séries</a></li>
-                    <li<?= $route_name === 'search' ? ' class="active"' : '' ?>><a href="/search">Recherche</a></li>
+                    <li<?= $route_name === 'search' ? ' class="active"' : '' ?>><a href="/search">Faire une recherche</a></li>
                 </ul>
             </nav>
         </header>

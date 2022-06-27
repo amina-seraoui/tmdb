@@ -46,7 +46,7 @@ class Actor extends Controller
 
         // Date de naissance au format DateTime
         $actor->birthday = new \DateTime($actor->birthday);
-        $actor->age = date_diff($actor->birthday, date_create('now'))->y;
+        $actor->age = date_diff($actor->birthday, date_create($actor->deathday ?? 'now'))->y;
 
         return $this->render('actor', compact('actor', 'movies', 'populars'));
     }
