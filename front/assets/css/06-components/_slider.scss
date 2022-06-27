@@ -1,23 +1,23 @@
-.slider {
-    width: fit-content;
-    left: 0;
-    @extend %grid;
-    gap: ratio-space(2px);
+.slide {
+    @extend %scrollbar;
+    overflow-x: auto;
 
-    .poster {
-        width: 200px;
-        height: 275px;
-        overflow: hidden;
+    .slider {
+        @extend %grid;
+        width: fit-content;
+        left: 0;
+        gap: ratio-space(2px);
 
-        img {
-            width: 100%;
-            height: 100%;
+        .poster {
+            width: 150px;
+            min-height: 200px;
+            padding-bottom: ratio-space(2px);
         }
-    }
-
-    img {
-        object-fit: cover;
-        object-position: center;
-        border-radius: 5px;
+    
+        img {
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5px;
+        }
     }
 }

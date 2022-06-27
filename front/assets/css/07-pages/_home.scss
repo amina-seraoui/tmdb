@@ -37,27 +37,14 @@ main#home {
 
         .trends {
             width: 100%;
-            padding-top: ratio-space(4px);
-            padding-bottom: ratio-space(4px);
-            overflow: auto hidden;
+            overflow: hidden;
             position: relative;
             margin-left: ratio-space(2px);
-
-            @extend %scrollbar;
-
-            h3 {
-                position: fixed;
-            }
-
-            .slider {
-                margin-top: calc(16px + ratio-space(4px));
-            }
         }
 
         > a {
             @extend %flex;
             position: absolute;
-            bottom: 0;
             right: ratio-space(2px);
         }
     }
