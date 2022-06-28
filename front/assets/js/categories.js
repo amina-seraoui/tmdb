@@ -61,6 +61,7 @@ if (main && categories && row) {
                     const a = document.createElement('a')
                     const img = document.createElement('img')
                     a.href = `/${media_type}/${movie.id}`
+                    a.className = 'poster'
                     img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
                     img.alt = media_type === 'movie' ? movie.title : movie.name
                     img.width = '150'
@@ -73,8 +74,8 @@ if (main && categories && row) {
     }
     
     // On charge la page suivante lorsqu'on arrive en bas de page
-    window.addEventListener('wheel', e => {
-        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+    row.addEventListener('wheel', e => {
+        if (row.scrollTop + row.offsetHeight >= row.scrollHeight) {
             if (page <= total_pages) callApi()
         }
     })

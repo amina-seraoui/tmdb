@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -5,125 +6,117 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="assets/css/index.css">
-        <link rel="shortcut icon" href="assets/img/logo.svg" type="image/svg">
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="shortcut icon" href="/assets/img/logo.svg" type="image/svg">
         <title>Allociné</title>
     </head>
     <body>
+
         <header>
-            <a href="/" class="logo"><img src="assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
+            <a href="/" class="logo"><img src="/assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
             <nav>
                 <ul>
-                    <li class="active"><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Acteurs</a></li>
+                    <li class="active"><a href="/movies">Films</a></li>
+                    <li><a href="/shows">Séries</a></li>
+                    <li><a href="/search">Faire une recherche</a></li>
                 </ul>
-
-                <form action="#" method="POST">
-                    <input type="search">
-                    <button class="search-btn"><img src="assets/img/search.svg" alt="Loupe"></button>
-                </form>
             </nav>
         </header>
 
-        <main id="genres" data-media_type="movie">
-            <aside>
-                <h3>Genres</h3>
-                <ul class="categories">
-                                    <li  data-id="28">Action<i></i></li>
-                                    <li  data-id="12">Aventure<i></i></li>
-                                    <li  data-id="16">Animation<i></i></li>
-                                    <li  data-id="35">Comédie<i></i></li>
-                                    <li  data-id="80">Crime<i></i></li>
-                                    <li  data-id="99">Documentaire<i></i></li>
-                                    <li  data-id="18">Drame<i></i></li>
-                                    <li  data-id="10751">Familial<i></i></li>
-                                    <li  data-id="14">Fantastique<i></i></li>
-                                    <li  data-id="36">Histoire<i></i></li>
-                                    <li  data-id="27">Horreur<i></i></li>
-                                    <li  data-id="10402">Musique<i></i></li>
-                                    <li  data-id="9648">Mystère<i></i></li>
-                                    <li  data-id="10749">Romance<i></i></li>
-                                    <li  data-id="878">Science-Fiction<i></i></li>
-                                    <li  data-id="10770">Téléfilm<i></i></li>
-                                    <li  data-id="53">Thriller<i></i></li>
-                                    <li  data-id="10752">Guerre<i></i></li>
-                                    <li  data-id="37">Western<i></i></li>
-                            </ul>
-            </aside>
-            <section>
-                <h2>Films</h2>
-                <div class="category">
-                    <h3 class="cat-names">Aucune catégorie sélectionnée</h3>
-                    <div class="row">
-                                            <a href="/movie/453395" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="150" height="200">
-                            </a>
-                                            <a href="/movie/338953" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/uXs7wMtsfnBFuGVogAxJXZXshFU.jpg" alt="Les Animaux fantastiques : Les Secrets de Dumbledore" width="150" height="200">
-                            </a>
-                                            <a href="/movie/675353" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/7RSCL6V8BlekgVnNPok6tLW50tP.jpg" alt="Sonic 2, le film" width="150" height="200">
-                            </a>
-                                            <a href="/movie/752623" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/rK8s7bTDZiOs41FXsOcoSv8X9Y5.jpg" alt="Le Secret de la cité perdue" width="150" height="200">
-                            </a>
-                                            <a href="/movie/818397" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/zGPLpljwrlK2y7AWXVpGx0ceIyH.jpg" alt="Memory" width="150" height="200">
-                            </a>
-                                            <a href="/movie/526896" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg" alt="Morbius" width="150" height="200">
-                            </a>
-                                            <a href="/movie/507086" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/4tRxeoxwf6X8l3yWYJr1CniKm6O.jpg" alt="Jurassic World : Le Monde d'Après" width="150" height="200">
-                            </a>
-                                            <a href="/movie/639933" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/hk0JZyTHfgN35f43pJUhDPTNjM0.jpg" alt="The Northman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/979163" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/kcp4zW9SR0Q1Y5OHfqiBPYlHZhq.jpg" alt="Au-delà de l’infini : Making-Of de Buzz l’éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/648579" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/wYChc5lbr5oAXGdajZ2D2c3nOeC.jpg" alt="Un talent en or massif" width="150" height="200">
-                            </a>
-                                            <a href="/movie/634649" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/3SyG7dq2q0ollxJ4pSsrqcfRmVj.jpg" alt="Spider-Man: No Way Home" width="150" height="200">
-                            </a>
-                                            <a href="/movie/764835" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u6Pg9eTklhg6Aa7kXaxrfdE1Chi.jpg" alt="The Desperate Hour" width="150" height="200">
-                            </a>
-                                            <a href="/movie/705861" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/77YXITmwal3dPCLNzLDIiFMaa7U.jpg" alt="Le Haut du panier" width="150" height="200">
-                            </a>
-                                            <a href="/movie/718789" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cCcNaQVS0Oc6LhDxNqGj1dJxIio.jpg" alt="Buzz l'Éclair" width="150" height="200">
-                            </a>
-                                            <a href="/movie/610150" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jUiaVnAo0aRzQYMfxOfzdHcltZ2.jpg" alt="Dragon Ball Super : Super Hero" width="150" height="200">
-                            </a>
-                                            <a href="/movie/508947" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/jBCUJ90BVXIDSLlXUvgQcj6LOHa.jpg" alt="Alerte rouge" width="150" height="200">
-                            </a>
-                                            <a href="/movie/689700" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/u713iOJjYPECVuk8facgNxaLHds.jpg" alt="Clean" width="150" height="200">
-                            </a>
-                                            <a href="/movie/335787" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/iNV2wiYpSBXJuFeEZUHC92zgcdl.jpg" alt="Uncharted" width="150" height="200">
-                            </a>
-                                            <a href="/movie/414906" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/t9JGg10CW1DzXEdWL54ewkUko6N.jpg" alt="The Batman" width="150" height="200">
-                            </a>
-                                            <a href="/movie/831946" class="poster">
-                                <img src="https://image.tmdb.org/t/p/w500/cpWUtkcgRKeauhTyVMjYHxAutp4.jpg" alt="Interceptor" width="150" height="200">
-                            </a>
-                                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>Copyright © 2022 - Amina Seraoui. Tous droits réservés.</p>
-        </footer>
+        <main id="genres" data-media_type="movie" data-total_pages="34081">
+    <aside>
+        <h3>Genres</h3>
+        <ul class="categories">
+                            <li  data-id="28">Action<i></i></li>
+                            <li  data-id="12">Aventure<i></i></li>
+                            <li  data-id="16">Animation<i></i></li>
+                            <li  data-id="35">Comédie<i></i></li>
+                            <li  data-id="80">Crime<i></i></li>
+                            <li  data-id="99">Documentaire<i></i></li>
+                            <li  data-id="18">Drame<i></i></li>
+                            <li  data-id="10751">Familial<i></i></li>
+                            <li  data-id="14">Fantastique<i></i></li>
+                            <li  data-id="36">Histoire<i></i></li>
+                            <li  data-id="27">Horreur<i></i></li>
+                            <li  data-id="10402">Musique<i></i></li>
+                            <li  data-id="9648">Mystère<i></i></li>
+                            <li  data-id="10749">Romance<i></i></li>
+                            <li  data-id="878">Science-Fiction<i></i></li>
+                            <li  data-id="10770">Téléfilm<i></i></li>
+                            <li  data-id="53">Thriller<i></i></li>
+                            <li  data-id="10752">Guerre<i></i></li>
+                            <li  data-id="37">Western<i></i></li>
+                    </ul>
+    </aside>
+    <section>
+        <h2>Films</h2>
+        <div class="category">
+            <h3 class="cat-names">Aucune catégorie sélectionnée</h3>
+            <div class="row">
+                                    <a href="/movie/453395" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/dbJDPJBHKxnMyvcc12mcbGK5RPF.jpg" alt="Doctor Strange in the Multiverse of Madness" width="150" height="200">
+                    </a>
+                                    <a href="/movie/338953" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/uXs7wMtsfnBFuGVogAxJXZXshFU.jpg" alt="Les Animaux fantastiques : Les Secrets de Dumbledore" width="150" height="200">
+                    </a>
+                                    <a href="/movie/626735" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/iT5otbDVNOLpeYN3nkfZ9FP2BQT.jpg" alt="Chien" width="150" height="200">
+                    </a>
+                                    <a href="/movie/675353" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/7RSCL6V8BlekgVnNPok6tLW50tP.jpg" alt="Sonic 2, le film" width="150" height="200">
+                    </a>
+                                    <a href="/movie/818397" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/zGPLpljwrlK2y7AWXVpGx0ceIyH.jpg" alt="Memory" width="150" height="200">
+                    </a>
+                                    <a href="/movie/752623" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/rK8s7bTDZiOs41FXsOcoSv8X9Y5.jpg" alt="Le Secret de la cité perdue" width="150" height="200">
+                    </a>
+                                    <a href="/movie/526896" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg" alt="Morbius" width="150" height="200">
+                    </a>
+                                    <a href="/movie/507086" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/4tRxeoxwf6X8l3yWYJr1CniKm6O.jpg" alt="Jurassic World : Le Monde d'Après" width="150" height="200">
+                    </a>
+                                    <a href="/movie/634649" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/3SyG7dq2q0ollxJ4pSsrqcfRmVj.jpg" alt="Spider-Man: No Way Home" width="150" height="200">
+                    </a>
+                                    <a href="/movie/705861" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/77YXITmwal3dPCLNzLDIiFMaa7U.jpg" alt="Le Haut du panier" width="150" height="200">
+                    </a>
+                                    <a href="/movie/960258" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/j0yJUB6o8wfWDM4j3VESB1fC3xC.jpg" alt="Shark Bay" width="150" height="200">
+                    </a>
+                                    <a href="/movie/880313" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/e4SXvups5V2H8rSWkRwijP9zg6C.jpg" alt="Colère divine" width="150" height="200">
+                    </a>
+                                    <a href="/movie/979163" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/kcp4zW9SR0Q1Y5OHfqiBPYlHZhq.jpg" alt="Au-delà de l’infini : Making-Of de Buzz l’éclair" width="150" height="200">
+                    </a>
+                                    <a href="/movie/628878" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/4ubzhDZAZGjoBIsrDr8UCBaNXUd.jpg" alt="Panama" width="150" height="200">
+                    </a>
+                                    <a href="/movie/639933" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/hk0JZyTHfgN35f43pJUhDPTNjM0.jpg" alt="The Northman" width="150" height="200">
+                    </a>
+                                    <a href="/movie/508947" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/jBCUJ90BVXIDSLlXUvgQcj6LOHa.jpg" alt="Alerte rouge" width="150" height="200">
+                    </a>
+                                    <a href="/movie/831946" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/cpWUtkcgRKeauhTyVMjYHxAutp4.jpg" alt="Interceptor" width="150" height="200">
+                    </a>
+                                    <a href="/movie/764835" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/u6Pg9eTklhg6Aa7kXaxrfdE1Chi.jpg" alt="The Desperate Hour" width="150" height="200">
+                    </a>
+                                    <a href="/movie/648579" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/wYChc5lbr5oAXGdajZ2D2c3nOeC.jpg" alt="Un talent en or massif" width="150" height="200">
+                    </a>
+                                    <a href="/movie/335787" class="poster">
+                        <img src="https://image.tmdb.org/t/p/w500/iNV2wiYpSBXJuFeEZUHC92zgcdl.jpg" alt="Uncharted" width="150" height="200">
+                    </a>
+                            </div>
+        </div>
+    </section>
+</main>
 
         <script src="/assets/js/index.js" type="module"></script>
     </body>
