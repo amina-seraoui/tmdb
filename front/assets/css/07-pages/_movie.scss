@@ -32,9 +32,17 @@ main#movie {
             @extend %flex;
             gap: ratio-space(4px);
             margin-bottom: ratio-space(2px);
+            align-items: flex-end;
 
             h1 {
+                width: 100%;
                 margin-bottom: ratio-space(2px);
+            }
+
+            p:first-of-type {
+                @extend %flex;
+                width: 100%;
+                gap: ratio-space(4px) !important;
             }
 
             button {

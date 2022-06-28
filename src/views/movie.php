@@ -8,7 +8,11 @@
             <h1><?= $movie->title ?></h1>
             <p>
                 <span><?= $movie->vote_average ?> | <?= $movie->vote_count ?></span>
-                <span>2.35 • <?= implode(', ', $movie->genres) ?> • <?= $movie->release_date->format('Y') ?></span>
+                <span>
+                    <?= $movie->runtime ?> •
+                    <?= implode(', ', $movie->genres) ?> •
+                    <?= $movie->release_date->format('Y') ?>
+                </span>
             </p>
             <p><?= $movie->overview ?></p>
             <?php if (!empty($movie->producers)): ?>

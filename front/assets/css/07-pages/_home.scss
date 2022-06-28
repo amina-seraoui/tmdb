@@ -11,7 +11,7 @@ main#home {
             align-items: flex-end;
             flex-direction: row-reverse;
             justify-content: space-between;
-            padding: ratio-space(8px) col(1);
+            padding: 90px col(1) ratio-space(8px) col(1);
 
             h1 {
                 max-width: 75%;
@@ -46,14 +46,6 @@ main#home {
             @extend %flex;
             position: absolute;
             right: ratio-space(2px);
-        }
-    }
-
-    @media #{$media-down-xl} {
-        section:first-child {
-            .container {
-                padding: ratio-space(8px) 0;
-            }
         }
     }
 

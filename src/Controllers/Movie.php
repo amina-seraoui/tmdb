@@ -44,6 +44,8 @@ class Movie extends Controller
                 return $m->type === 'Teaser';
         })];
         empty($movie->teasers) ? $movie->teasers = $movie->videos->results : null;
+        $movie->runtime = $this->minutesToHours($movie->runtime ?? 0);
+//        dd($movie);
 
         return $this->render('movie', compact('movie', 'actors'));
     }
@@ -67,5 +69,12 @@ class Movie extends Controller
     public function all (ServerRequestInterface $req): ResponseInterface
     {
         return $this->list($req);
+    }
+
+    private function minutesToHours(int $min)
+    {
+        $hours = floor($min / 60);
+        $minutes = ($min % 60);
+        return sprintf('%2dh%02d', $hours, $minutes);
     }
 }

@@ -1,5 +1,5 @@
 h1 {
-    font-size: rem(80px);
+    font-size: rem(60px);
     font-weight: 600;
     font-family: $font-secondary;
     text-transform: uppercase;
@@ -23,15 +23,37 @@ p {
     line-height: $font-size * 1.5;
 }
 
+.link {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 10px;
+        background: rgba($secondary-color, .5);
+        bottom: 0px;
+        left: 0;
+        transition: .3s;
+        transform: skewY(11deg) rotate(-11deg);
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
 
 @media #{$media-down-lg} {
     h1 {
-        font-size: rem(50px);
+        font-size: rem(45px);
     }
 }
 
 @media #{$media-down-sm} {
     h1 {
-        font-size: rem(45px);
+        font-size: rem(35px);
     }
 }
