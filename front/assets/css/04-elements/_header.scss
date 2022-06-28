@@ -2,7 +2,7 @@ header {
     @extend %flex-center;
     position: fixed;
     top: 0;
-    z-index: 90;
+    z-index: 10;
     width: 100%;
     background: $reverse-linear;
     height: 90px;
@@ -25,9 +25,160 @@ header {
                 }
             }
         }
+    }    
+}
+
+
+//     .navbar {
+//         background-color: $primary-color;
+//         padding: ratio-space(2px);
+//         ul {
+//             @extend .container;
+//             display: flex;
+//             justify-content: space-evenly;
+//             flex-wrap: wrap;
+
+//              li {
+//                  position: relative;
+//                  margin: ratio-space(3px) ratio-space(1px);
+//                  color: $white;
+
+//                  a {
+//                      padding: ratio-space(2px);
+//                      z-index: 1;
+//                      position: relative;
+//                  }
+
+//                  &.active {
+//                      font-weight: 600;
+//                  }
+
+//                  &::before {
+//                     position: absolute;
+//                     content: '';
+//                     width: 64px;
+//                     height: 64px;
+//                     background: url('../img/nav-border.svg') center / contain no-repeat;
+//                     top: -125%;
+//                     left: 0;
+//                 }
+
+//                  &::after {
+//                     position: absolute;
+//                     content: '';
+//                     width: 0;
+//                     height: 64px;
+//                     background: linear-gradient(to top, $white 3px, transparent 3px);
+//                     top: -125%;
+//                     left: 0;
+//                     transition: .3s;
+//                 }
+
+//                 &:hover {
+//                     &::after {
+//                         width: 100%;
+//                     }
+//                 }
+//              }
+//         }
+//     }
+
+//     @media #{$media-down-md} {
+//         .hero {
+//             .content {
+//                 flex-direction: column;
+//                 align-items: flex-start;
+
+//                 p {
+//                     margin: ratio-space(4px) 0 0 0;
+//                 }
+//             }
+//         }
+
+//         .navbar {
+//             position: fixed;
+//             top: 0;
+//             right: 0;
+//             width: 90%;
+//             height: 100%;
+//             transform: translate(100%);
+//             transition: .5s;
+
+//             &.opened {
+//                 transform: translate(0);
+//             }
+            
+//             ul {
+//                 flex-direction: column;
+
+//                 li {
+//                     &::before {
+//                         display: none;
+//                     }
+
+//                     a {
+//                         padding-left: 0;
+//                     }
+//                 }
+//             }
+//         }
+
+//         #open-menu {
+//             display: block;
+//         }
+
+//         .navbar.opened {
+//             & ~ #open-menu {
+//                 display: none;
+//             }
+//             & ~ #close-menu {
+//                 display: block;
+//             }
+//         }
+//     }
+// }
+
+#toggle-menu {
+    width: 32px;
+    height: 32px;
+    background: center / contain url('../img/menu.svg') no-repeat;
+    position: fixed;
+    top: ratio-space(4px);
+    right: ratio-space(4px);
+    cursor: pointer;
+    display: none;
+    transition: .5s;
+    z-index: 11;
+
+    &:hover {
+        transform: scale(1.1)
+    }
+}
+
+@media #{$media-down-md} {
+    header {
+        display: none !important;
+        background: $dark;
+        height: 100vh;
+        flex-direction: column;
+        align-items: start !important;
+        justify-content: start !important;
+        padding: ratio-space(4px);
+
+        nav ul {
+            flex-direction: column;
+        }
+
+        &.active {
+            display: flex !important;
+
+            ~#toggle-menu {
+                background-image: url('../img/close.svg');
+            }
+        }
     }
 
-    @media #{$media-down-md} {
-        display: none!important;
+    #toggle-menu {
+        display: block;
     }
 }

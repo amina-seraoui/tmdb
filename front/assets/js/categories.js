@@ -3,13 +3,12 @@ const categories = document.querySelectorAll('#genres aside ul li')
 const h3 = document.querySelector('.cat-names')
 const row = document.querySelector('.row')
 
-let page = 1
-let last_fetch = 0
-let total_pages = 1
-let ids = []
-
 if (main && categories && row) {
     const media_type = main.dataset.media_type
+    let page = 2
+    let last_fetch = 1
+    let total_pages = parseInt(main.dataset.total_pages ?? 0)
+    let ids = []
 
     // On ajoute un listener au click sur chaque li catégorie
     categories.forEach(cat => {
