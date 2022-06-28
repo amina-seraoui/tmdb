@@ -19,12 +19,14 @@
         </aside>
         <div class="trends">
             <h3>Populaires</h3>
-            <div class="slider">
-                <?php for($i = 1; $i < count($trends); $i++): ?>
-                    <a href="<?= $trends[$i]->media_type . '/' . $trends[$i]->id ?>" class="poster">
-                        <img src="https://image.tmdb.org/t/p/w500/<?= $trends[$i]->poster_path ?>" alt="<?= $trends[$i]->original_title ?>" width="200" height="275">
-                    </a>
-                <?php endfor; ?>
+            <div class="slide">
+                <div class="slider">
+                    <?php for($i = 1; $i < count($trends); $i++): ?>
+                        <a href="<?= $trends[$i]->media_type . '/' . $trends[$i]->id ?>" class="poster">
+                            <img src="https://image.tmdb.org/t/p/w500/<?= $trends[$i]->poster_path ?>" alt="<?= $trends[$i]->original_title ?>" width="150" height="200">
+                        </a>
+                    <?php endfor; ?>
+                </div>
             </div>
         </div>
         <a href="/movies">Voir plus <img src="assets/img/arrow-right.svg" alt="Fléche droite"></a>

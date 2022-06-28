@@ -36,7 +36,7 @@ main#home {
         position: relative;
 
         .trends {
-            width: 100%;
+            width: calc(100% - ratio-space(2px));
             overflow: hidden;
             position: relative;
             margin-left: ratio-space(2px);
@@ -56,13 +56,37 @@ main#home {
             }
         }
     }
+
     @media #{$media-down-lg} {
         section:first-child {
             height: 45vh;
 
             .container {
-               flex-direction: column;
-               align-items: flex-start;
+                h1 {
+                    width: 60%;
+                }
+            }
+        }
+
+        section:nth-child(2) {
+            flex-direction: column;
+            aside {
+                width: calc(100% - ratio-space(2px));
+            }
+        }
+    }
+
+    @media #{$media-down-md} {
+        section:first-child {
+            height: 85vh;
+
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+
+                h1 {
+                    width: 100%;
+                }
             }
         }
     }
