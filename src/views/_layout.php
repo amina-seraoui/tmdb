@@ -22,6 +22,8 @@
             </nav>
         </header>
 
+        <div id="toggle-menu"></div>
+
         <?= $content ?>
 
         <script src="/assets/js/index.js" type="module"></script>

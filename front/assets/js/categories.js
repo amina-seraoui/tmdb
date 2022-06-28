@@ -61,7 +61,7 @@ if (main && categories && row) {
                     const img = document.createElement('img')
                     a.href = `/${media_type}/${movie.id}`
                     a.className = 'poster'
-                    img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                    img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path ?? ''}`
                     img.alt = media_type === 'movie' ? movie.title : movie.name
                     img.width = '150'
                     img.height = 200

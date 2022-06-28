@@ -2,18 +2,38 @@ main#genres {
     @extend %container, %grid;
     justify-content: space-between;
     margin-top: calc(90px + ratio-space(2px));
+    
+    aside .toggle-genres {
+        display: none;
+    }
 
     section {
         width: 100%;
         padding: 0 ratio-space(2px);
 
+        
+
         .category {
+            @extend %flex;
+            justify-content: space-between;
+
+            h3 {
+                width: calc(50% - ratio-space(1px));
+            }
+
+            .toggle-genres {
+                cursor: pointer;
+                font-style: italic;
+                display: none;
+            }
+
             .row {
                 @extend %flex, %scrollbar;
                 justify-content: space-between;
                 height: 100%;
                 max-height: calc(100vh - 90px - ratio-space(2px) - 24px - 16px - 16px - 32px);
                 overflow: auto;
+                padding-right: ratio-space(1px);
 
                 img {
                     border-radius: 5px;
@@ -25,15 +45,46 @@ main#genres {
 
     @media #{$media-down-md} {
         aside {
-            // width: calc(100% - ratio/-space(2px));
             display: none;
+            position: fixed;
+            background: $dark;
+            z-index: 12;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: ratio-space(4px);
+            padding-top: calc(90px + ratio-space(2px) + 16px + 1.5rem);
+
+            &.active {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .toggle-genres {
+                cursor: pointer;
+                font-style: italic;
+                display: inline;
+            }
+
+            .categories {
+                width: 100%;
+            }
         }
 
         section {
-            .category .row {
-                .poster {
-                    width: calc(25% - ratio-space(2px));
-                    min-width: 140px;
+            .category {
+                .toggle-genres {
+                    display: inline;
+                }
+                
+                .row {
+                    .poster {
+                        width: calc(25% - ratio-space(2px));
+                        min-width: 140px;
+                    }
                 }
             }
         }
