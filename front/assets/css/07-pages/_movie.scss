@@ -16,11 +16,16 @@ main#movie {
 
     .container {
         @extend %flex;
-        height: 100%;
+        height: calc(100% - 90px);
         align-items: center;
+        margin-top: 90px;
 
         .left, .right {
-            width: calc(50% - ratio-space(1px));
+            width: calc(50% - ratio-space(2px));
+            height: 100%;
+            padding-bottom: ratio-space(2px);
+            overflow: hidden auto;
+            @extend %scrollbar;
         }
 
         .details {
@@ -38,7 +43,6 @@ main#movie {
         }
 
         .images {
-            width: col(6);
             position: relative;
             overflow: auto hidden;
             @extend %scrollbar;
@@ -69,12 +73,20 @@ main#movie {
                 }
             }
         }
+    }
 
-        @media #{$media-down-md} {
+    @media #{$media-down-md} {
+        height: fit-content;
+        
+        .container {
+            height: fit-content;
+            width: calc(100% - ratio-space(2px));
+
             .left, .right {
-                width: 100%;
+                width: calc(100% - ratio-space(2px));
+                max-height: fit-content;
             }
-
+    
             .images {
                 width: col(12);
             }

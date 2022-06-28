@@ -11,8 +11,6 @@ main#genres {
         width: 100%;
         padding: 0 ratio-space(2px);
 
-        
-
         .category {
             @extend %flex;
             justify-content: space-between;
@@ -31,7 +29,7 @@ main#genres {
                 @extend %flex, %scrollbar;
                 justify-content: space-between;
                 height: 100%;
-                max-height: calc(100vh - 90px - ratio-space(2px) - 24px - 16px - 16px - 32px);
+                max-height: calc(100vh - (90px + ratio-space(2px)) - (1rem + ratio-space(4px)) - (1.5rem + ratio-space(2px)) - ratio-space(2px)); // 100 - header - h3 - h2 - gap 
                 overflow: auto;
                 padding-right: ratio-space(1px);
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -5,83 +6,83 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="assets/css/index.css">
-        <link rel="shortcut icon" href="assets/img/logo.svg" type="image/svg">
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="shortcut icon" href="/assets/img/logo.svg" type="image/svg">
         <title>Allociné</title>
     </head>
     <body>
+
         <header>
-            <a href="/" class="logo"><img src="assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
+            <a href="/" class="logo"><img src="/assets/img/logo.svg" alt="Logo" width="40" height="40"></a>
             <nav>
                 <ul>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Acteurs</a></li>
+                    <li><a href="/movies">Films</a></li>
+                    <li class="active"><a href="/shows">Séries</a></li>
+                    <li><a href="/search">Faire une recherche</a></li>
                 </ul>
-
-                <form action="#" method="POST">
-                    <input type="search">
-                    <button class="search-btn"><img src="assets/img/search.svg" alt="Loupe"></button>
-                </form>
             </nav>
         </header>
 
-        <main id="movie">
-            <div class="container">
-                <div class="left details">
-                    <h1>The title</h1>
-                    <p>
-                        <span>8.2 | 1055</span>
-                        <span>2.35 • Action, Aventure, Drama • Drama</span>
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quaerat.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quaerat.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, quaerat.
-                    </p>
-                    <p>
-                        Réalisateur : Guy Hawkins
-                    </p>
-                    <button class="play-btn">Bande-annonce</button>
-                </div>
-                <div class="right">
-                    <div class="images">
-                        <h3>Images</h3>
-                        <div class="slider">
-                            <img src="https://image.tmdb.org/t/p/w500/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="The title" width="200" height="125">
-                            <img src="https://image.tmdb.org/t/p/w500/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="The title" width="200" height="125">
-                            <img src="https://image.tmdb.org/t/p/w500/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="The title" width="200" height="125">
-                            <img src="https://image.tmdb.org/t/p/w500/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="The title" width="200" height="125">
-                            <img src="https://image.tmdb.org/t/p/w500/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="The title" width="200" height="125">
-                        </div>
+        <div id="toggle-menu"></div>
+
+        <main id="movie"
+          style="background-image: url('https://image.tmdb.org/t/p/original/lnEU5KKrpQNsDaxxjDHuzRRh8Zl.jpg')"
+    >
+    <div class="container">
+        <div class="left details">
+            <h1>Outlander</h1>
+            <p>
+                <span>8.2 | 2094</span>
+                <span>7 saisons • <a href='/shows/18'>Drame</a>, <a href='/shows/10765'>Science-Fiction & Fantastique</a> • 2014</span>
+            </p>
+            <p>Les aventures de Claire, une infirmière de guerre mariée qui se retrouve accidentellement propulsée en pleine campagne écossaise de 1743. Elle se retrouve alors mêlée à des histoires de propriétés et d'espionnage qui la poussent à prendre la fuite et menacent sa vie. Elle est alors forcée d'épouser Jamie, un jeune guerrier écossais passionné qui s'enflamme pour elle et la conduit à être déchirée entre fidélité et désir, étant partagée entre deux hommes dramatiquement opposés et deux vies irréconciliables.</p>
+                            <p>Producteurs : <a href='/actor/1217205'>Matthew B. Roberts</a>, <a href='/actor/15728'>Andy Harries</a>, <a href='/actor/238445'>Jim Kohlberg</a>, <a href='/actor/1712807'>Elicia Bessette</a>, <a href='/actor/2368970'>Michael Wilson</a>, <a href='/actor/1712838'>Michael O'Halloran</a>, <a href='/actor/1642830'>Shaina Fewell</a>, <a href='/actor/1225842'>Steve Kornacki</a>, <a href='/actor/1335372'>Alyson Evans</a>, <a href='/actor/121904'>Luke Schelhaas</a>, <a href='/actor/1008067'>Guy Tannahill</a>, <a href='/actor/95036'>Barbara Stepansky</a>, <a href='/actor/2803684'>Ben McGinnis</a>, <a href='/actor/3479265'>Bryce Scherer-Brian</a>, <a href='/actor/1240523'>Hilary Benson</a>, <a href='/actor/1876087'>Steven Moore</a>, <a href='/actor/3525325'>Hazel Borthwick McShannon</a>, <a href='/actor/3525328'>Alex Carrodus-Cook</a>, <a href='/actor/2672758'>Mira Hoffman</a>, <a href='/actor/3525333'>Kimberley Looi</a>, <a href='/actor/1467362'>Erin McNeill</a>, <a href='/actor/2093106'>Rachel Traynor</a>, <a href='/actor/3525337'>Eilidh MacKinnon</a>, <a href='/actor/3525338'>Chris Henry</a>, <a href='/actor/3525339'>Lisa Neely</a>, <a href='/actor/3525340'>Jacqui McBride</a>, <a href='/actor/3525341'>Fiona Peace</a>, <a href='/actor/3525342'>Jamie Fleming</a>, <a href='/actor/3391979'>Simone Pereira Hind</a>, <a href='/actor/3525364'>Glenda Mariani</a>, <a href='/actor/2982001'>Anna Dawson</a>, <a href='/actor/1398505'>Suzanne M. Smith</a>, <a href='/actor/1214393'>Toni Graphia</a>, <a href='/actor/1115253'>Maril Davis</a>, <a href='/actor/147056'>Caitríona Balfe</a>, <a href='/actor/209326'>Sam Heughan</a>, <a href='/actor/2385'>Ronald D. Moore</a></p>
+                            <button class="play-btn">Bande-annonce</button>
                     </div>
-                    <div class="actors">
-                        <h3>Acteurs</h3>
+        <div class="right">
+                            <div class="images">
+                    <h3>Images</h3>
+                    <div class="slide">
                         <div class="slider">
-                            <a class="actor" href="#">
-                                <img src="https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="Guy Hawkins" width="64" height="64">
-                                <p>Guy Hawkins</p>
-                            </a>
-                            <a class="actor" href="#">
-                                <img src="https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="Guy Hawkins" width="64" height="64">
-                                <p>Guy Hawkins</p>
-                            </a>
-                            <a class="actor" href="#">
-                                <img src="https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="Guy Hawkins" width="64" height="64">
-                                <p>Guy Hawkins</p>
-                            </a>
-                            <a class="actor" href="#">
-                                <img src="https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="Guy Hawkins" width="64" height="64">
-                                <p>Guy Hawkins</p>
-                            </a>
-                            <a class="actor" href="#">
-                                <img src="https://image.tmdb.org/t/p/original/rlCRM7U5g2hcU1O8ylGcqsMYHIP.jpg" alt="Guy Hawkins" width="64" height="64">
-                                <p>Guy Hawkins</p>
-                            </a>
-                        </div>
+                                                                <img src="https://image.tmdb.org/t/p/w500/7tH5BGps4YyVMcHJGDlSbCaPHop.jpg" alt="Outlander" width="200" height="125">
+                                                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+                        <div class="actors">
+                <h3>Acteurs</h3>
+                                    <div class="slide">
+                        <div class="slider">
+                                                            <a class="actor" href="/actor/147056">
+                                    <img src="https://image.tmdb.org/t/p/original/4KQRDj74lKwU52Ewmzz7sVIakgn.jpg" alt="Caitríona Balfe" width="64" height="64">
+                                    <p>Caitríona Balfe</p>
+                                </a>
+                                                            <a class="actor" href="/actor/209326">
+                                    <img src="https://image.tmdb.org/t/p/original/rU3Whc039MeS4DEuxvf0AavFGH.jpg" alt="Sam Heughan" width="64" height="64">
+                                    <p>Sam Heughan</p>
+                                </a>
+                                                            <a class="actor" href="/actor/1623273">
+                                    <img src="https://image.tmdb.org/t/p/original/oBkearm8XdrYTEK0VCWCGmwURt6.jpg" alt="Sophie Skelton" width="64" height="64">
+                                    <p>Sophie Skelton</p>
+                                </a>
+                                                            <a class="actor" href="/actor/1287731">
+                                    <img src="https://image.tmdb.org/t/p/original/nJAy31AKLzU35JY0HTEcZAJFoPN.jpg" alt="Richard Rankin" width="64" height="64">
+                                    <p>Richard Rankin</p>
+                                </a>
+                                                            <a class="actor" href="/actor/185460">
+                                    <img src="https://image.tmdb.org/t/p/original/5SAmzx40A0C3VOgzYPlcOmwqdL6.jpg" alt="Mark Lewis Jones" width="64" height="64">
+                                    <p>Mark Lewis Jones</p>
+                                </a>
+                                                    </div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</main>
+
+    <div id="teaser" data-src="ZRiVh7PiD1I">
+        <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+        <script src="/assets/js/index.js" type="module"></script>
     </body>
 </html>

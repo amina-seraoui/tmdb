@@ -42,12 +42,14 @@
                     <h2>Filmographie</h2>
                     <div class="populars">
                         <h3>Populaires</h3>
-                        <div class="slider">
-                            <?php for ($i = 0; $i < min(5, count($populars)); $i++): ?>
-                                <a href="/<?= $populars[$i]->media_type . '/' . $populars[$i]->id ?>">
-                                    <img src="https://image.tmdb.org/t/p/w500<?= $populars[$i]->poster_path ?>" alt="<?= $populars[$i]->title ?? $populars[$i]->name ?>" width="125" height="175">
-                                </a>
-                            <?php endfor; ?>
+                        <div class="slide">
+                            <div class="slider">
+                                <?php for ($i = 0; $i < min(5, count($populars)); $i++): ?>
+                                    <a href="/<?= $populars[$i]->media_type . '/' . $populars[$i]->id ?>">
+                                        <img src="https://image.tmdb.org/t/p/w500<?= $populars[$i]->poster_path ?>" alt="<?= $populars[$i]->title ?? $populars[$i]->name ?>" width="125" height="175">
+                                    </a>
+                                <?php endfor; ?>
+                            </div>
                         </div>
                     </div>
                     <div class="chronos">
