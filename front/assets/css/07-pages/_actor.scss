@@ -5,7 +5,7 @@ main#actor {
     min-height: calc(100vh - 90px - ratio-space(5px));
 
     .container {
-        @extend %grid;
+        @extend %flex;
         .left {
             width: col(5);
             text-align: center;
@@ -68,6 +68,30 @@ main#actor {
 
                 &::-webkit-scrollbar {
                     margin-left: -20px;
+                }
+            }
+        }
+    }
+
+    @media #{$media-down-md} {
+        .container {
+            width: calc(100% - ratio-space(2px));
+
+            .left, .right {
+                width: calc(100% - ratio-space(2px));
+                max-height: fit-content;
+                padding: ratio-space(2px) 0;
+
+                .general li {
+                    width: 100%;
+                }
+
+                .movies {
+                    padding: 0;
+
+                    .chronos ul li {
+                        width: 100%;
+                    }
                 }
             }
         }

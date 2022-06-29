@@ -45,7 +45,7 @@
                         <div class="slide">
                             <div class="slider">
                                 <?php for ($i = 0; $i < min(5, count($populars)); $i++): ?>
-                                    <a href="/<?= $populars[$i]->media_type . '/' . $populars[$i]->id ?>">
+                                    <a href="/<?= $populars[$i]->media_type . '/' . $populars[$i]->id ?>" class="poster">
                                         <img src="https://image.tmdb.org/t/p/w500<?= $populars[$i]->poster_path ?>" alt="<?= $populars[$i]->title ?? $populars[$i]->name ?>" width="125" height="175">
                                     </a>
                                 <?php endfor; ?>
