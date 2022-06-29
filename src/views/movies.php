@@ -11,8 +11,10 @@
     <section>
         <h2>Films</h2>
         <div class="category">
-            <h3 class="cat-names"><?= $actual->name ?></h3>
-            <span class="toggle-genres">Modifier les catégories</span>
+            <div class="title">
+                <h3 class="cat-names"><?= $actual->name ?></h3>
+                <span class="toggle-genres">Modifier les catégories</span>
+            </div>
             <div class="row">
                 <?php foreach ($movies as $movie): ?>
                     <a href="/movie/<?= $movie->id ?>" class="poster">

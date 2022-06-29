@@ -11,8 +11,10 @@
     <section>
         <h2>Séries</h2>
         <div class="category">
-            <h3 class="cat-names"><?= $actual->name ?></h3>
-            <span class="toggle-genres">Modifier les catégories</span>
+            <div class="title">
+                <h3 class="cat-names"><?= $actual->name ?></h3>
+                <span class="toggle-genres">Modifier les catégories</span>
+            </div>
             <div class="row">
                 <?php foreach ($shows as $show): ?>
                     <a href="/tv/<?= $show->id ?>" class="poster">

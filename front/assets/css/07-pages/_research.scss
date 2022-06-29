@@ -1,25 +1,41 @@
 main#research {
-    @extend %container;
-    margin-top: calc(90px + ratio-space(2px));
+    @extend %flex;
+    width: calc(100% - ratio-space(4px));
+    margin: calc(90px + ratio-space(2px)) auto 0 auto;
+    overflow: hidden;
+
+    .toggle-genres {
+        cursor: pointer;
+        font-style: italic;
+        display: none;
+        width: calc(50% - ratio-space(1px));
+        text-align: right;
+    }
 
     aside {
         width: calc(col(3) - ratio-space(1px));
-        position: fixed;
     }
 
     section {
         width: calc(col(9) - ratio-space(1px));
-        margin-left: calc(col(3) - ratio-space(1px));
 
         .title {
             @extend %flex;
             justify-content: space-between;
             align-items: flex-end;
+            margin-bottom: ratio-space(2px);
 
-            
-            input {
-                background: none;
-                border-bottom: solid 1px $white;
+            h2 {
+                margin-bottom: ratio-space(1px);
+                width: calc(50% - ratio-space(1px));
+            }
+
+            .search-form {
+                margin-bottom: ratio-space(1px);
+                input {
+                    background: none;
+                    border-bottom: solid 1px $white;
+                }
             }
         }
 
@@ -35,6 +51,36 @@ main#research {
                     text-align: center;
                 }
             }
+        }
+    }
+
+    @media #{$media-down-md} {
+        .toggle-genres {
+            display: inline;
+        }
+
+        aside {
+            display: none;
+            position: fixed;
+            background: $dark;
+            z-index: 12;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: ratio-space(4px);
+            padding-top: calc(90px + ratio-space(2px) + 16px + 1.5rem);
+
+            &.active {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+        }
+        
+        section {
+            width: 100%;
         }
     }
 }

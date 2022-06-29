@@ -1,14 +1,16 @@
 ul.categories {
     li {
-        @extend %flex;
+        @extend %flex-center;
         cursor: pointer;
+        word-break: break-word;
+        flex-wrap: nowrap;
+
         i {
             display: inline-block;
             width: 16px;
             height: 16px;
             background: url('../img/plus.svg');
             transition: .3s;
-           
         }
 
         &.active i {

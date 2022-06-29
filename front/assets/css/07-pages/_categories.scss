@@ -15,23 +15,31 @@ main#genres {
             @extend %flex;
             justify-content: space-between;
 
-            h3 {
-                width: calc(50% - ratio-space(1px));
+            .title {
+                h3 {
+                    width: calc(50% - ratio-space(1px));
+                    margin-bottom: ratio-space(1px);
+                }
+    
+                .toggle-genres {
+                    cursor: pointer;
+                    font-style: italic;
+                    display: none;
+                    margin-bottom: ratio-space(1px);
+                }
+
+                margin-bottom: ratio-space(2px);
             }
 
-            .toggle-genres {
-                cursor: pointer;
-                font-style: italic;
-                display: none;
-            }
 
             .row {
                 @extend %flex, %scrollbar;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 height: 100%;
-                max-height: calc(100vh - (90px + ratio-space(2px)) - (1rem + ratio-space(4px)) - (1.5rem + ratio-space(2px)) - ratio-space(2px)); // 100 - header - h3 - h2 - gap 
+                max-height: calc(100vh - (90px + ratio-space(2px)) - (100px) - (1.5rem + ratio-space(2px)) - ratio-space(2px)); // 100 - header - title - h2 - gap
                 overflow: auto;
                 padding-right: ratio-space(1px);
+                text-align: center;
 
                 img {
                     border-radius: 5px;
@@ -74,7 +82,7 @@ main#genres {
 
         section {
             .category {
-                .toggle-genres {
+                .title .toggle-genres {
                     display: inline;
                 }
                 
