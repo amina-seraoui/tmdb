@@ -6,7 +6,7 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="/assets/css/index.css">
-        <link rel="shortcut icon" href="/assets/img/logo.svg" type="image/svg">
+        <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
         <title>Allociné</title>
     </head>
     <body>
