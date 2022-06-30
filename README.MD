@@ -15,4 +15,15 @@ Réaliser une application web utilisant l'API [TMDB](https://www.themoviedb.org/
 2. Depuis la racine du projet :
    - Créer l'autoloader : `composer dump-autoload`
    - Installer les dépendances : `composer install`
+   - Ajouter l'API KEY de TMDB dans le fichier [config.php](#config.php)
    - Lancer le serveur de développement : `composer start`
+
+## config.php
+```php
+<?php
+
+return [
+    'API_KEY' => 'ma_cle_secrete'
+];
+
+```
