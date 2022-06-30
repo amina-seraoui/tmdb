@@ -11,16 +11,14 @@ use Psr\Http\Message\ServerRequestInterface;
 class Show extends Controller
 {
     protected string $route_name = 'show';
-    private ShowAPI $api;
 
-    public function __construct(ContainerInterface $c)
+    public function __construct(ContainerInterface $c, ShowAPI $api)
     {
-        parent::__construct($c);
-        $this->api = new ShowAPI();
+        parent::__construct($c, $api);
     }
 
     #[Route('/tv/[i:id]')]
-    public function index (ServerRequestInterface $req)
+    public function index (ServerRequestInterface $req): ResponseInterface
     {
         $id = $req->getAttribute('id');
         $show = $this->api->byID($id);

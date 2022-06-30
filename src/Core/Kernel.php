@@ -31,8 +31,9 @@ class Kernel implements RequestHandlerInterface
      */
     public function addController(string $controller): self
     {
-        $controller = new \ReflectionClass($controller);
         $container = $this->getContainer();
+        $instance = $container->get($controller);
+        $controller = new \ReflectionClass($controller);
 
         /** @var Router $router */
         $router = $container->get(Router::class);
@@ -47,7 +48,7 @@ class Kernel implements RequestHandlerInterface
             foreach ($attributes as $attr) {
                 /** @var Route $route */
                 $route = $attr->newInstance();
-                $router->map($route, $method->getClosure($controller->newInstance($container)));
+                $router->map($route, $method->getClosure($instance));
             }
         }
 

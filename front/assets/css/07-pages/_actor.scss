@@ -7,10 +7,10 @@ main#actor {
     .container {
         @extend %flex;
         .left {
-            width: col(5);
+            width: calc(col(5) - ratio-space(1px));
             text-align: center;
             max-height: calc(100vh - 90px - ratio-space(5px));
-            overflow: auto;
+            overflow: hidden auto;
             @extend %scrollbar;
 
             img {
@@ -28,7 +28,7 @@ main#actor {
         }
 
         .right {
-            width: col(7);
+            width: calc(col(7) - ratio-space(1px));
             padding-left: ratio-space(2px);
             max-height: calc(100vh - 90px - ratio-space(5px));
             overflow: auto;
@@ -47,7 +47,7 @@ main#actor {
 
             .movies {
                 margin-top: ratio-space(4px);
-                overflow-y: scroll;
+                overflow-y: auto;
                 padding-bottom: ratio-space(2px);
 
                 .populars {

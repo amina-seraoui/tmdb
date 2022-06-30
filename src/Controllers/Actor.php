@@ -4,23 +4,21 @@ namespace App\Controllers;
 
 use App\Core\Router\Route;
 use App\Models\API\ActorAPI;
-use App\Models\API\TMDB;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Actor extends Controller
 {
     protected string $route_name = 'actor';
-    private TMDB $api;
 
-    public function __construct(ContainerInterface $c)
+    public function __construct(ContainerInterface $c, ActorAPI $api)
     {
-        parent::__construct($c);
-        $this->api = new ActorAPI();
+        parent::__construct($c, $api);
     }
 
     #[Route('/actor/[i:id]')]
-    public function index (ServerRequestInterface $req)
+    public function index (ServerRequestInterface $req): ResponseInterface
     {
         $id = $req->getAttribute('id');
         $actor = $this->api->byID($id);

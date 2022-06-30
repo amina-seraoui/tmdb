@@ -11,12 +11,10 @@ use Psr\Http\Message\ServerRequestInterface;
 class Movie extends Controller
 {
     protected string $route_name = 'movie';
-    private MovieAPI $api;
 
-    public function __construct (ContainerInterface $c)
+    public function __construct (ContainerInterface $c, MovieAPI $api)
     {
-        parent::__construct($c);
-        $this->api = new MovieAPI();
+        parent::__construct($c, $api);
     }
 
     #[Route('/movie/[i:id]')]
@@ -71,7 +69,12 @@ class Movie extends Controller
         return $this->list($req);
     }
 
-    private function minutesToHours(int $min)
+    /**
+     * Renvoie un temps en minutes au format '0h00'
+     * @param int $min
+     * @return string
+     */
+    private function minutesToHours(int $min): string
     {
         $hours = floor($min / 60);
         $minutes = ($min % 60);

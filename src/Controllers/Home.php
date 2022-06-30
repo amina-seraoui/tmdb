@@ -5,20 +5,18 @@ namespace App\Controllers;
 use App\Core\Router\Route;
 use App\Models\API\MovieAPI;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class Home extends Controller
 {
-    private MovieAPI $api;
-
-    public function __construct(ContainerInterface $c)
+    public function __construct(ContainerInterface $c, MovieAPI $api)
     {
-        parent::__construct($c);
-        $this->api = new MovieAPI();
+        parent::__construct($c, $api);
     }
 
     #[Route('/')]
-    public function index (ServerRequestInterface $req)
+    public function index (ServerRequestInterface $req): ResponseInterface
     {
         $categories = $this->api->getCategories();
         $trends = $this->api->getTrends('movie');

@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <a href="/movies">Voir plus <img src="assets/img/arrow-right.svg" alt="Fléche droite"></a>
+        <a href="/movies" class="link">Voir plus <img src="assets/img/arrow-right.svg" alt="Fléche droite"></a>
     </section>
 </main>
 
