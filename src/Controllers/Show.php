@@ -32,7 +32,7 @@ class Show extends Controller
         // Récupérer les producteurs
         $show->producers = array_map(function ($prod) {
             return "<a href='/actor/$prod->id'>$prod->name</a>";
-        }, $this->api->getProducers($id));
+        }, $show->created_by);
 
         // Date de sortie au format DateTime
         $show->first_air_date = new \DateTime($show->first_air_date);
