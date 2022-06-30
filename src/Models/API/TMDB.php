@@ -2,13 +2,17 @@
 
 namespace App\Models\API;
 
+use Psr\Container\ContainerInterface;
+
 abstract class TMDB
 {
     public const URI = 'https://api.themoviedb.org/3';
     public const OPTIONS = [
-        'api_key' => '3878fff853d2f6476b4bef55a2246bf1',
         'language' => 'fr-FR'
     ];
+
+    public function __construct(private ContainerInterface $c)
+    {}
 
     /**
      * Effectue un appel curl à l'API TMDB et renvoie un objet
@@ -19,7 +23,7 @@ abstract class TMDB
      */
     protected function callAPI (string $endpoint, array $options = []): object
     {
-        $options = array_merge(self::OPTIONS, $options);
+        $options = array_merge(self::OPTIONS, $options, ['api_key' => $this->c->get('API_KEY')]);
         $curl = curl_init(self::URI . $endpoint . '?' . http_build_query($options));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
