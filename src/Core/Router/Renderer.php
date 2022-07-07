@@ -2,12 +2,10 @@
 
 namespace App\Core\Router;
 
-use Psr\Container\ContainerInterface;
-
 class Renderer
 {
     private string $dir_path = ROOT . '/src/views/';
-    public function __construct(private ContainerInterface $c) {}
+    public function __construct() {}
 
     public function render(string $view, array $params = []): string
     {

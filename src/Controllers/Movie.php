@@ -43,7 +43,6 @@ class Movie extends Controller
         })];
         empty($movie->teasers) ? $movie->teasers = $movie->videos->results : null;
         $movie->runtime = $this->minutesToHours($movie->runtime ?? 0);
-//        dd($movie);
 
         return $this->render('movie', compact('movie', 'actors'));
     }
