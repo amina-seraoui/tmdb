@@ -4,7 +4,10 @@ define('ROOT', dirname(__DIR__));
 
 require_once ROOT . '/vendor/autoload.php';
 
-$app = (new \App\Core\Kernel(ROOT . '/config.php'))
+$dotenv = Dotenv\Dotenv::createImmutable(ROOT);
+$dotenv->load();
+
+$app = (new \App\Core\Kernel($_ENV))
     // Controlleurs
     ->addController(\App\Controllers\Home::class)
     ->addController(\App\Controllers\Movie::class)

@@ -17,7 +17,7 @@ class Kernel implements RequestHandlerInterface
     private ?ContainerInterface $container = null;
     private int $index = 0;
 
-    public function __construct(private string $config)
+    public function __construct(private array $config)
     {}
 
     /**

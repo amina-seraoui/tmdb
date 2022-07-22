@@ -24,6 +24,7 @@
         "symfony/var-dumper": "^6.1",
         "psr/http-server-middleware": "^1.0",
         "http-interop/response-sender": "^1.0",
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "vlucas/phpdotenv": "^5.4"
     }
 }
