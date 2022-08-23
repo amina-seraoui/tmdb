@@ -3,5 +3,4 @@ vendor/
 front/node_modules/
 public/assets/css/
 front/assets/css/index.*
-config.php
 .env
