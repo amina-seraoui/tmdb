@@ -1,6 +1,6 @@
 .idea/
 vendor/
-front/node_modules/
+node_modules/
 public/assets/css/
 front/assets/css/index.*
 .env
